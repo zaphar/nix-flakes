@@ -35,7 +35,6 @@
     quint-lsp = (pkgs.callPackage ./packages/quint/default.nix {})."@informalsystems/quint-language-server";
   in {
 
-    # TODO(zaphar): Add quint package
     packages = {
         quint = quint;
         quint-lsp = quint-lsp;
