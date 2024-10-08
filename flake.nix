@@ -62,6 +62,7 @@
         buildInputs = [
             nurl
             nil
+            pkgs.node2nix
         ];
     };
   });
