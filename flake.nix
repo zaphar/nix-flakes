@@ -72,10 +72,6 @@
         name = "nvim-treesitter-context";
         src = treesitter-context;
     };
-    nvim-bnf = pkgs.vimUtils.buildVimPlugin {
-        name = "nvim-bnf";
-        src = nvim-bnf-src;
-    };
     roslyn-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "roslyn-nvim";
         src = roslyn-lsp;
@@ -83,7 +79,7 @@
   in {
 
     packages = {
-        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context nvim-bnf roslyn-nvim;
+        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim;
     };
 
     devShell = pkgs.mkShell {
