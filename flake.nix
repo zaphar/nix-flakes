@@ -24,20 +24,40 @@
         url = "github:zaphar/roslyn.nvim/main";
         flake = false;
     };
+    victoria-logs-src = {
+        # NOTE(zaphar) this should be kept in sync with the package version below.
+        url = "github:VictoriaMetrics/VictoriaMetrics/v0.34.0-victorialogs";
+        flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, nurl-flake, nil-flake, neogit-src, d2-vim-src, treesitter-context, roslyn-lsp }:
-  flake-utils.lib.eachDefaultSystem (system: let
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    nurl-flake,
+    nil-flake,
+    neogit-src,
+    d2-vim-src,
+    treesitter-context,
+    roslyn-lsp,
+    victoria-logs-src,
+  }: flake-utils.lib.eachDefaultSystem (system: let
     pkgs = import nixpkgs { inherit system; };
     nurl = nurl-flake.packages."${system}".default;
     nil = nil-flake.packages."${system}".default;
     quint = (pkgs.callPackage ./packages/quint/default.nix {})."@informalsystems/quint";
     quint-lsp = (pkgs.callPackage ./packages/quint/default.nix {})."@informalsystems/quint-language-server";
+    victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
+        src = victoria-logs-src;
+        # NOTE(zaphar) this should be kept in sync with the flake input above.
+        version = "0.34.0-victorialogs";
+    };
+
   in {
 
     packages = {
-        quint = quint;
-        quint-lsp = quint-lsp;
+        inherit quint quint-lsp victoria-logs;
         neogit-nvim = pkgs.vimUtils.buildVimPlugin {
           pname = "neogit";
           version = "2024-05-16";
