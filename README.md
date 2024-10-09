@@ -8,4 +8,5 @@ A collection of nix flakes
 * d2-vim vim plugin for [d2lang.com](https://d2lang.com)
 * nvim-treesitter-context vim plugin for treesitter-context
 * roslyn-nvim roslyn lsp for neovim
+* nvim-bnf ebnf syntax highlighting and completion for nvim
 * victoria-logs a lot aggregator and query server

@@ -16,6 +16,10 @@
         url = "github:terrastruct/d2-vim";
         flake = false;
     };
+    nvim-bnf-src = {
+        url = "github:daskol/nvim-bnf";
+        flake = false;
+    };
     treesitter-context = {
         url = "github:nvim-treesitter/nvim-treesitter-context/e6b743ccd4e780bc9cd85b707de67df72eea1a23";
         flake = false;
@@ -39,6 +43,7 @@
     nil-flake,
     neogit-src,
     d2-vim-src,
+    nvim-bnf-src,
     treesitter-context,
     roslyn-lsp,
     victoria-logs-src,
@@ -53,29 +58,32 @@
         # NOTE(zaphar) this should be kept in sync with the flake input above.
         version = "0.34.0-victorialogs";
     };
-
+    neogit-nvim = pkgs.vimUtils.buildVimPlugin {
+      pname = "neogit";
+      version = "2024-05-16";
+      src = neogit-src;
+    };
+    d2-vim =  pkgs.vimUtils.buildVimPlugin {
+      pname = "d2-nvim";
+      version = "2024-01-28";
+      src = d2-vim-src;
+    };
+    nvim-treesitter-context = pkgs.vimUtils.buildVimPlugin {
+        name = "nvim-treesitter-context";
+        src = treesitter-context;
+    };
+    nvim-bnf = pkgs.vimUtils.buildVimPlugin {
+        name = "nvim-bnf";
+        src = nvim-bnf-src;
+    };
+    roslyn-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "roslyn-nvim";
+        src = roslyn-lsp;
+    };
   in {
 
     packages = {
-        inherit quint quint-lsp victoria-logs;
-        neogit-nvim = pkgs.vimUtils.buildVimPlugin {
-          pname = "neogit";
-          version = "2024-05-16";
-          src = neogit-src;
-        };
-        d2-vim =  pkgs.vimUtils.buildVimPlugin {
-          pname = "d2-nvim";
-          version = "2024-01-28";
-          src = d2-vim-src;
-        };
-        nvim-treesitter-context = pkgs.vimUtils.buildVimPlugin {
-            name = "nvim-treesitter-context";
-            src = treesitter-context;
-        };
-        roslyn-nvim = pkgs.vimUtils.buildVimPlugin {
-            name = "roslyn-nvim";
-            src = roslyn-lsp;
-        };
+        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context nvim-bnf roslyn-nvim;
     };
 
     devShell = pkgs.mkShell {
