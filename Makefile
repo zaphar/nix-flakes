@@ -1,4 +1,4 @@
-build: build-quint build-quint-lsp build-neogit-nvim build-d2-vim build-nvim-treesitter-context build-roslyn-nvim build-victoria-logs build-nvim-bnf
+build: build-quint build-quint-lsp build-neogit-nvim build-d2-vim build-nvim-treesitter-context build-roslyn-nvim build-victoria-logs build-ionide-nvim
 
 build-%:
 	nix build ".#$*"

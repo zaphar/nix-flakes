@@ -16,10 +16,6 @@
         url = "github:terrastruct/d2-vim";
         flake = false;
     };
-    nvim-bnf-src = {
-        url = "github:daskol/nvim-bnf";
-        flake = false;
-    };
     treesitter-context = {
         url = "github:nvim-treesitter/nvim-treesitter-context/e6b743ccd4e780bc9cd85b707de67df72eea1a23";
         flake = false;
@@ -33,6 +29,10 @@
         url = "github:VictoriaMetrics/VictoriaMetrics/v0.34.0-victorialogs";
         flake = false;
     };
+    ionide-nvim-src = {
+        url = "github:ionide/ionide-vim";
+        flake = false;
+    };
   };
 
   outputs = {
@@ -43,10 +43,10 @@
     nil-flake,
     neogit-src,
     d2-vim-src,
-    nvim-bnf-src,
     treesitter-context,
     roslyn-lsp,
     victoria-logs-src,
+    ionide-nvim-src,
   }: flake-utils.lib.eachDefaultSystem (system: let
     pkgs = import nixpkgs { inherit system; };
     nurl = nurl-flake.packages."${system}".default;
@@ -76,10 +76,14 @@
         name = "roslyn-nvim";
         src = roslyn-lsp;
     };
+    ionide-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "ionide-vim";
+        src = ionide-nvim-src;
+    };
   in {
 
     packages = {
-        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim;
+        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim;
     };
 
     devShell = pkgs.mkShell {

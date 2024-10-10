@@ -52,6 +52,22 @@
         "type": "github"
       }
     },
+    "ionide-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725347912,
+        "narHash": "sha256-tEpolSQcAt1Y/y7ZG5vW1THm8raBnXqTBTsIc1M4zVM=",
+        "owner": "ionide",
+        "repo": "ionide-vim",
+        "rev": "268955cc106f8328a232b160a7360cf331c0a323",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ionide",
+        "repo": "ionide-vim",
+        "type": "github"
+      }
+    },
     "neogit-src": {
       "flake": false,
       "locked": {
@@ -153,31 +169,15 @@
         "type": "github"
       }
     },
-    "nvim-bnf-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1555099325,
-        "narHash": "sha256-zeW/2wIAwvxb/R8bXDjPEYvB8KWBDx6T0DcMH6NY2NU=",
-        "owner": "daskol",
-        "repo": "nvim-bnf",
-        "rev": "749aa45be562d4d24340719e66ae750001885f38",
-        "type": "github"
-      },
-      "original": {
-        "owner": "daskol",
-        "repo": "nvim-bnf",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "d2-vim-src": "d2-vim-src",
         "flake-utils": "flake-utils",
+        "ionide-nvim-src": "ionide-nvim-src",
         "neogit-src": "neogit-src",
         "nil-flake": "nil-flake",
         "nixpkgs": "nixpkgs_2",
         "nurl-flake": "nurl-flake",
-        "nvim-bnf-src": "nvim-bnf-src",
         "roslyn-lsp": "roslyn-lsp",
         "treesitter-context": "treesitter-context",
         "victoria-logs-src": "victoria-logs-src"
