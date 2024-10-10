@@ -180,7 +180,8 @@
         "nurl-flake": "nurl-flake",
         "roslyn-lsp": "roslyn-lsp",
         "treesitter-context": "treesitter-context",
-        "victoria-logs-src": "victoria-logs-src"
+        "victoria-logs-src": "victoria-logs-src",
+        "zig-src": "zig-src"
       }
     },
     "roslyn-lsp": {
@@ -282,6 +283,23 @@
         "owner": "VictoriaMetrics",
         "ref": "v0.34.0-victorialogs",
         "repo": "VictoriaMetrics",
+        "type": "github"
+      }
+    },
+    "zig-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1717700711,
+        "narHash": "sha256-5qSiTq+UWGOwjDVZMIrAt2cDKHkyNPBSAEjpRQUByFM=",
+        "owner": "ziglang",
+        "repo": "zig",
+        "rev": "cf90dfd3098bef5b3c22d5ab026173b3c357f2dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ziglang",
+        "ref": "0.13.0",
+        "repo": "zig",
         "type": "github"
       }
     }

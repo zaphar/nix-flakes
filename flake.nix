@@ -9,29 +9,33 @@
       url = "github:oxalica/nil";
     };
     neogit-src = {
-        url = "github:NeogitOrg/neogit";
-        flake = false;
+      url = "github:NeogitOrg/neogit";
+      flake = false;
     };
     d2-vim-src = {
-        url = "github:terrastruct/d2-vim";
-        flake = false;
+      url = "github:terrastruct/d2-vim";
+      flake = false;
     };
     treesitter-context = {
-        url = "github:nvim-treesitter/nvim-treesitter-context/e6b743ccd4e780bc9cd85b707de67df72eea1a23";
-        flake = false;
+      url = "github:nvim-treesitter/nvim-treesitter-context/e6b743ccd4e780bc9cd85b707de67df72eea1a23";
+      flake = false;
     };
     roslyn-lsp = {
-        url = "github:zaphar/roslyn.nvim/main";
-        flake = false;
+      url = "github:zaphar/roslyn.nvim/main";
+      flake = false;
     };
     victoria-logs-src = {
-        # NOTE(zaphar) this should be kept in sync with the package version below.
-        url = "github:VictoriaMetrics/VictoriaMetrics/v0.34.0-victorialogs";
-        flake = false;
+      # NOTE(zaphar) this should be kept in sync with the package version below.
+      url = "github:VictoriaMetrics/VictoriaMetrics/v0.34.0-victorialogs";
+      flake = false;
     };
     ionide-nvim-src = {
-        url = "github:ionide/ionide-vim";
-        flake = false;
+      url = "github:ionide/ionide-vim";
+      flake = false;
+    };
+    zig-src = {
+      url = "github:ziglang/zig/0.13.0";
+      flake = false;
     };
   };
 
@@ -47,6 +51,7 @@
     roslyn-lsp,
     victoria-logs-src,
     ionide-nvim-src,
+    zig-src,
   }: flake-utils.lib.eachDefaultSystem (system: let
     pkgs = import nixpkgs { inherit system; };
     nurl = nurl-flake.packages."${system}".default;
@@ -80,10 +85,14 @@
         name = "ionide-vim";
         src = ionide-nvim-src;
     };
+    ziglang = pkgs.callPackage ./packages/ziglang/default.nix {
+      src = zig-src;
+      version = "0.13.0";
+    };
   in {
 
     packages = {
-        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim;
+        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang;
     };
 
     devShell = pkgs.mkShell {
