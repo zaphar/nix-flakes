@@ -37,6 +37,15 @@
       url = "github:ziglang/zig/0.13.0";
       flake = false;
     };
+    tree-sitter-cli-src = {
+      url = "github:tree-sitter/tree-sitter";
+      flake = false;
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay?ref=stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    naersk.url = "github:nix-community/naersk";
   };
 
   outputs = {
@@ -52,8 +61,14 @@
     victoria-logs-src,
     ionide-nvim-src,
     zig-src,
+    tree-sitter-cli-src,
+    rust-overlay,
+    naersk,
   }: flake-utils.lib.eachDefaultSystem (system: let
-    pkgs = import nixpkgs { inherit system; };
+    overlays = [
+      rust-overlay.overlays.default
+    ];
+    pkgs = import nixpkgs { inherit system overlays; };
     nurl = nurl-flake.packages."${system}".default;
     nil = nil-flake.packages."${system}".default;
     quint = (pkgs.callPackage ./packages/quint/default.nix {})."@informalsystems/quint";
@@ -89,10 +104,19 @@
       src = zig-src;
       version = "0.13.0";
     };
+    rust-bin = pkgs.rust-bin.stable."1.81.0".default;
+    naersk-lib = pkgs.callPackage naersk {
+        rustc = rust-bin;
+        cargo = rust-bin;
+    };
+    tree-sitter-cli = naersk-lib.buildPackage {
+      src = tree-sitter-cli-src;
+      root = tree-sitter-cli-src;
+    };
   in {
 
     packages = {
-        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang;
+        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang tree-sitter-cli;
     };
 
     devShell = pkgs.mkShell {

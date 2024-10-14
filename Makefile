@@ -1,4 +1,4 @@
-build: build-victoria-logs languages nvim
+build: build-tree-sitter-cli build-victoria-logs languages nvim
 
 nvim: build-neogit-nvim build-d2-vim build-nvim-treesitter-context build-roslyn-nvim build-ionide-nvim
 
