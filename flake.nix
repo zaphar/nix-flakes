@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Zaphar's collection of useful custom flakes.";
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
@@ -71,8 +71,9 @@
     pkgs = import nixpkgs { inherit system overlays; };
     nurl = nurl-flake.packages."${system}".default;
     nil = nil-flake.packages."${system}".default;
-    quint = (pkgs.callPackage ./packages/quint/default.nix {})."@informalsystems/quint";
-    quint-lsp = (pkgs.callPackage ./packages/quint/default.nix {})."@informalsystems/quint-language-server";
+    quint = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint";
+    quint-lsp = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint-language-server";
+    node-treesitter = (pkgs.callPackage ./packages/npm/default.nix {})."tree-sitter-cli";
     victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
         src = victoria-logs-src;
         # NOTE(zaphar) this should be kept in sync with the flake input above.

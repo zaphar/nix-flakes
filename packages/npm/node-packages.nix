@@ -4,13 +4,13 @@
 
 let
   sources = {
-    "@grpc/grpc-js-1.11.1" = {
+    "@grpc/grpc-js-1.12.2" = {
       name = "_at_grpc_slash_grpc-js";
       packageName = "@grpc/grpc-js";
-      version = "1.11.1";
+      version = "1.12.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.11.1.tgz";
-        sha512 = "gyt/WayZrVPH2w/UTLansS7F9Nwld472JxxaETamrM8HNlsa+jSLNyKAZmhxI2Me4c3mQHFiS1wWHDY1g1Kthw==";
+        url = "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.12.2.tgz";
+        sha512 = "bgxdZmgTrJZX50OjyVwz3+mNEnCTNkh3cIqGPWVNeW9jX6bn1ZkU80uPd+67/ZpIJIjRQ9qaHCjhavyoWYxumg==";
       };
     };
     "@grpc/proto-loader-0.7.13" = {
@@ -22,13 +22,13 @@ let
         sha512 = "AiXO/bfe9bmxBjxxtYxFAXGZvMaN5s8kO+jBHAJCON8rJoB5YS/D6X7ZNc6XQkuHNmyl4CYaMI1fJ/Gn27RGGw==";
       };
     };
-    "@informalsystems/quint-0.20.0" = {
+    "@informalsystems/quint-0.22.2" = {
       name = "_at_informalsystems_slash_quint";
       packageName = "@informalsystems/quint";
-      version = "0.20.0";
+      version = "0.22.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.20.0.tgz";
-        sha512 = "q3jxvzVw0hw4yxOJcGzAMIguGfcyScs/BP5efqCxQeVMDxLsqy+SAgLH5CnM7UNJFXLawwuyRaCbIvq9+2BXRg==";
+        url = "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.22.2.tgz";
+        sha512 = "o8Og6+QSxvwSMai3auAdu8+xi4sBYU9ZSfhLXFY/gQvdc/Da4FkqNwRRJaFOyf1YlGnH0VVzTgm/HQPaqbJZzw==";
       };
     };
     "@js-sdsl/ordered-map-4.4.2" = {
@@ -76,13 +76,13 @@ let
         sha512 = "GETXfE05J0+7H2STzekpKObFe765O5dlAKUTLNGeH+x47z7JjXHfsHKo5z21D/o/IOZTUEI6nyWyR+bZVP/n5Q==";
       };
     };
-    "@octokit/types-13.5.0" = {
+    "@octokit/types-13.6.1" = {
       name = "_at_octokit_slash_types";
       packageName = "@octokit/types";
-      version = "13.5.0";
+      version = "13.6.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@octokit/types/-/types-13.5.0.tgz";
-        sha512 = "HdqWTf5Z3qwDVlzCrP8UJquMwunpDiMPt5er+QjGzL4hqr/vBVY/MauQgS1xWxCDT1oMx1EULyqxncdCY/NVSQ==";
+        url = "https://registry.npmjs.org/@octokit/types/-/types-13.6.1.tgz";
+        sha512 = "PHZE9Z+kWXb23Ndik8MKPirBPziOc0D2/3KH1P+6jK5nGWe96kadZuE4jev2/Jq7FvIfTlT2Ltg8Fv2x1v0a5g==";
       };
     };
     "@protobufjs/aspromise-1.1.2" = {
@@ -211,13 +211,13 @@ let
         sha512 = "099oFQmp/Tlf20xW5XI5R4F69N6lF/zQ09XDzc3R5BOLFlqIotgKoNIyj0HD4fQLWcGDreDJv8k/BkLJscrDrw==";
       };
     };
-    "@types/lodash-4.17.7" = {
+    "@types/lodash-4.17.10" = {
       name = "_at_types_slash_lodash";
       packageName = "@types/lodash";
-      version = "4.17.7";
+      version = "4.17.10";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/lodash/-/lodash-4.17.7.tgz";
-        sha512 = "8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==";
+        url = "https://registry.npmjs.org/@types/lodash/-/lodash-4.17.10.tgz";
+        sha512 = "YpS0zzoduEhuOWjAotS6A5AVCva7X4lVlYLF0FYHAY9sdraBfnatttHItlWeZdGhuEkf+OzMNg2ZYAx8t+52uQ==";
       };
     };
     "@types/lodash.clonedeep-4.5.0" = {
@@ -229,13 +229,13 @@ let
         sha512 = "IHijjFVPJTvzvrNPz+6nQy5lZQb7uh807RfTIEaQBrZXrIGjZy0L2dEb3hju34J0eqbXLCY6Hub/g81Jl4pGCA==";
       };
     };
-    "@types/node-22.5.1" = {
+    "@types/node-22.7.5" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.5.1";
+      version = "22.7.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.5.1.tgz";
-        sha512 = "KkHsxej0j9IW1KKOOAA/XBA0z08UFSrRQHErzEfA3Vgq57eXIMYboIlHJuYIfd+lwCQjtKqUu3UnmKbtUc9yRw==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.7.5.tgz";
+        sha512 = "jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==";
       };
     };
     "@types/seedrandom-3.0.8" = {
@@ -265,13 +265,13 @@ let
         sha512 = "zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==";
       };
     };
-    "antlr4ts-0.5.0-alpha.4" = {
+    "antlr4ts-0.5.0-dev" = {
       name = "antlr4ts";
       packageName = "antlr4ts";
-      version = "antlr4ts-0.5.0-alpha.4";
+      version = "0.5.0-dev";
       src = fetchurl {
-        url = "https://registry.npmjs.org/antlr4ts/-/antlr4ts-0.5.0-alpha.4.tgz";
-        sha512 = "sha512-WPQDt1B74OfPv/IMS2ekXAKkTZIHl88uMetg6q3OTqgFxZ/dxDXI0EWLyZid/1Pe6hTftyg5N7gel5wNAGxXyQ==";
+        url = "https://registry.npmjs.org/antlr4ts/-/antlr4ts-0.5.0-dev.tgz";
+        sha512 = "FXZRGC53ZejWLOMzxJ6IpgmGYNzBYeaoN5FBQe2Y6+iEA+JFNZz+J67TF84ajksmzVX8BUi+Ytx7oih+BWtA8A==";
       };
     };
     "bignumber.js-9.1.2" = {
@@ -308,6 +308,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz";
         sha512 = "bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==";
+      };
+    };
+    "cli-progress-3.12.0" = {
+      name = "cli-progress";
+      packageName = "cli-progress";
+      version = "3.12.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/cli-progress/-/cli-progress-3.12.0.tgz";
+        sha512 = "tRkV3HJ1ASwm19THiiLIXLO7Im7wlTuKnvkYaTkyoAPefqjNg7W7DHKUlGRxy9vxDvbyCYQkQozvptuMkGCg8A==";
       };
     };
     "cliui-8.0.1" = {
@@ -757,20 +766,20 @@ in
   "@informalsystems/quint" = nodeEnv.buildNodePackage {
     name = "_at_informalsystems_slash_quint";
     packageName = "@informalsystems/quint";
-    version = "0.21.1";
+    version = "0.22.2";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.21.1.tgz";
-      sha512 = "kqXHC4a+6N1L0UDFzHknryLmOGwEuLk5pQyiirAKyCvkSHGn6QmnZTdn0jJI2bUppA0BS1lANTLrC2UQOGdKQg==";
+      url = "https://registry.npmjs.org/@informalsystems/quint/-/quint-0.22.2.tgz";
+      sha512 = "o8Og6+QSxvwSMai3auAdu8+xi4sBYU9ZSfhLXFY/gQvdc/Da4FkqNwRRJaFOyf1YlGnH0VVzTgm/HQPaqbJZzw==";
     };
     dependencies = [
-      sources."@grpc/grpc-js-1.11.1"
+      sources."@grpc/grpc-js-1.12.2"
       sources."@grpc/proto-loader-0.7.13"
       sources."@js-sdsl/ordered-map-4.4.2"
       sources."@octokit/endpoint-9.0.5"
       sources."@octokit/openapi-types-22.2.0"
       sources."@octokit/request-8.4.0"
       sources."@octokit/request-error-5.1.0"
-      sources."@octokit/types-13.5.0"
+      sources."@octokit/types-13.6.1"
       sources."@protobufjs/aspromise-1.1.2"
       sources."@protobufjs/base64-1.1.2"
       sources."@protobufjs/codegen-2.0.4"
@@ -785,17 +794,18 @@ in
       sources."@sweet-monads/interfaces-3.3.0"
       sources."@sweet-monads/maybe-3.2.0"
       sources."@types/line-column-1.0.2"
-      sources."@types/lodash-4.17.7"
+      sources."@types/lodash-4.17.10"
       sources."@types/lodash.clonedeep-4.5.0"
-      sources."@types/node-22.5.1"
+      sources."@types/node-22.7.5"
       sources."@types/seedrandom-3.0.8"
       sources."ansi-regex-5.0.1"
       sources."ansi-styles-4.3.0"
-      sources."antlr4ts-0.5.0-alpha.4"
+      sources."antlr4ts-0.5.0-dev"
       sources."bignumber.js-9.1.2"
       sources."buffer-from-1.1.2"
       sources."chalk-4.1.2"
       sources."chownr-2.0.0"
+      sources."cli-progress-3.12.0"
       sources."cliui-8.0.1"
       sources."color-convert-2.0.1"
       sources."color-name-1.1.4"
@@ -860,21 +870,21 @@ in
   "@informalsystems/quint-language-server" = nodeEnv.buildNodePackage {
     name = "_at_informalsystems_slash_quint-language-server";
     packageName = "@informalsystems/quint-language-server";
-    version = "0.14.4";
+    version = "0.14.6";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@informalsystems/quint-language-server/-/quint-language-server-0.14.4.tgz";
-      sha512 = "ZM8sCj5JsyWnI/Z9fspnwofuYpekcu3ke3A1wtrMndH4Vs2AHaJAiCGNy5wINLQho87LuvLL5eOGERbARgct/Q==";
+      url = "https://registry.npmjs.org/@informalsystems/quint-language-server/-/quint-language-server-0.14.6.tgz";
+      sha512 = "/FXyG4DNxLwiAwuyzbrsd1A8ShNi6A8UTzJNKQoBOkdm1v/Z7G+2b/4zVHiOZ5RZVm5w6kYcYntidHfC/a8D9g==";
     };
     dependencies = [
-      sources."@grpc/grpc-js-1.11.1"
+      sources."@grpc/grpc-js-1.12.2"
       sources."@grpc/proto-loader-0.7.13"
-      sources."@informalsystems/quint-0.20.0"
+      sources."@informalsystems/quint-0.22.2"
       sources."@js-sdsl/ordered-map-4.4.2"
       sources."@octokit/endpoint-9.0.5"
       sources."@octokit/openapi-types-22.2.0"
       sources."@octokit/request-8.4.0"
       sources."@octokit/request-error-5.1.0"
-      sources."@octokit/types-13.5.0"
+      sources."@octokit/types-13.6.1"
       sources."@protobufjs/aspromise-1.1.2"
       sources."@protobufjs/base64-1.1.2"
       sources."@protobufjs/codegen-2.0.4"
@@ -889,17 +899,18 @@ in
       sources."@sweet-monads/interfaces-3.3.0"
       sources."@sweet-monads/maybe-3.2.0"
       sources."@types/line-column-1.0.2"
-      sources."@types/lodash-4.17.7"
+      sources."@types/lodash-4.17.10"
       sources."@types/lodash.clonedeep-4.5.0"
-      sources."@types/node-22.5.1"
+      sources."@types/node-22.7.5"
       sources."@types/seedrandom-3.0.8"
       sources."ansi-regex-5.0.1"
       sources."ansi-styles-4.3.0"
-      sources."antlr4ts-0.5.0-alpha.4"
+      sources."antlr4ts-0.5.0-dev"
       sources."bignumber.js-9.1.2"
       sources."buffer-from-1.1.2"
       sources."chalk-4.1.2"
       sources."chownr-2.0.0"
+      sources."cli-progress-3.12.0"
       sources."cliui-8.0.1"
       sources."color-convert-2.0.1"
       sources."color-name-1.1.4"
