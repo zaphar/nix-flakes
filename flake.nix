@@ -65,6 +65,7 @@
     rust-overlay,
     naersk,
   }: flake-utils.lib.eachDefaultSystem (system: let
+    tree-sitter-dsl-typings = "${tree-sitter-cli-src}/cli/npm/dsl.d.ts";
     overlays = [
       rust-overlay.overlays.default
     ];
@@ -73,7 +74,6 @@
     nil = nil-flake.packages."${system}".default;
     quint = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint";
     quint-lsp = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint-language-server";
-    node-treesitter = (pkgs.callPackage ./packages/npm/default.nix {})."tree-sitter-cli";
     victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
         src = victoria-logs-src;
         # NOTE(zaphar) this should be kept in sync with the flake input above.
@@ -114,10 +114,15 @@
       src = tree-sitter-cli-src;
       root = tree-sitter-cli-src;
     };
+    createTreeSitterTypings = pkgs.writeShellScript "createTreeSitterTypings.sh" ''
+      cat ${tree-sitter-dsl-typings} > dsl.d.ts
+    '';
   in {
-
+    files = {
+      inherit tree-sitter-dsl-typings;
+    };
     packages = {
-        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang tree-sitter-cli;
+        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang tree-sitter-cli createTreeSitterTypings;
     };
 
     devShell = pkgs.mkShell {
