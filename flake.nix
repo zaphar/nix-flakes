@@ -125,6 +125,12 @@
         inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang tree-sitter-cli createTreeSitterTypings;
     };
 
+    templates = {
+      base-rust = {
+        path = ./templates/base-rust;
+      };
+    };
+
     devShell = pkgs.mkShell {
         buildInputs = [
             nurl
@@ -132,5 +138,16 @@
             pkgs.node2nix
         ];
     };
-  });
+  }) // {
+    templates = {
+      base-rust = {
+        path = ./templates/base-rust;
+        description = "A basic rust nix template";
+      };
+      base-quint = {
+        path = ./templates/base-quint;
+        description = "A basic quint nix template";
+      };
+    };
+  };
 }
