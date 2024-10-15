@@ -148,6 +148,10 @@
         path = ./templates/base-quint;
         description = "A basic quint nix template";
       };
+      basic-flake = {
+        path = ./templates/basic-flake;
+        description = "A basic nix flake template";
+      };
     };
   };
 }
