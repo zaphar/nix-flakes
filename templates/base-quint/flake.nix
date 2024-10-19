@@ -14,8 +14,10 @@
           packages = [
             quint
             quint-lsp
-            pkgs.gnumake
-          ];
+          ] // (with pkgs; [
+            d2
+            gnumake
+          ]);
         };
       });
 }
