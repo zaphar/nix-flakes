@@ -39,7 +39,7 @@
     packages.default = project;
     devShells.default = pkgs.mkShell {
       buildInputs = with pkgs; [ rustc cargo rustfmt clippy ];
-      packages = with pkgs; [gnumake d2];
+      packages = with pkgs; [ gnumake ];
     };
   });
 }

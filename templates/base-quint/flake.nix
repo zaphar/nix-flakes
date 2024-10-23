@@ -15,7 +15,6 @@
             quint
             quint-lsp
           ] // (with pkgs; [
-            d2
             gnumake
           ]);
         };
