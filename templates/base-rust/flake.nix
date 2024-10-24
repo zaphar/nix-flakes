@@ -1,7 +1,7 @@
 {
   inputs = {
     rust-overlay = {
-      url = "github:oxalica/rust-overlay?ref=stable";
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     naersk.url = "github:nix-community/naersk";
@@ -37,7 +37,7 @@
   {
     packages.default = project;
     devShells.default = pkgs.mkShell {
-      buildInputs = [ rust-bin ];
+      buildInputs = [ rust-bin pkgs.rust-analyzer ];
       packages = with pkgs; [ gnumake ];
     };
   });
