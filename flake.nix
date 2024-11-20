@@ -94,10 +94,15 @@
       version = "2024-01-28";
       src = d2-vim-src;
     };
-    hunk-nvim = pkgs.vimUtils.buildVimPlugin {
+    hunk-nvim-pkg = pkgs.vimUtils.buildVimPlugin {
       pname = "hunk-nvim";
       version = "1.5.0";
       src = hunk-nvim-src;
+
+    };
+    hunk-nvim = pkgs.symlinkJoin {
+      name = "hunk-nvim-bundle";
+      paths = [ hunk-nvim-pkg pkgs.vimPlugins.nui-nvim ];
     };
     nvim-treesitter-context = pkgs.vimUtils.buildVimPlugin {
         name = "nvim-treesitter-context";
