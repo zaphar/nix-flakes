@@ -52,6 +52,22 @@
         "type": "github"
       }
     },
+    "hunk-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726776875,
+        "narHash": "sha256-CbvfRmgVshzEH/EUn1/PfNzT+MChtTTmxfi+gTZ7Q6Y=",
+        "owner": "julienvincent",
+        "repo": "hunk.nvim",
+        "rev": "eb89245a66bdfce10436d15923bf4deb43d23c96",
+        "type": "github"
+      },
+      "original": {
+        "owner": "julienvincent",
+        "repo": "hunk.nvim",
+        "type": "github"
+      }
+    },
     "ionide-nvim-src": {
       "flake": false,
       "locked": {
@@ -205,6 +221,7 @@
       "inputs": {
         "d2-vim-src": "d2-vim-src",
         "flake-utils": "flake-utils",
+        "hunk-nvim-src": "hunk-nvim-src",
         "ionide-nvim-src": "ionide-nvim-src",
         "naersk": "naersk",
         "neogit-src": "neogit-src",

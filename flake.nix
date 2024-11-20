@@ -16,6 +16,10 @@
       url = "github:terrastruct/d2-vim";
       flake = false;
     };
+    hunk-nvim-src = {
+      url = "github:julienvincent/hunk.nvim";
+      flake = false;
+    };
     treesitter-context = {
       url = "github:nvim-treesitter/nvim-treesitter-context/e6b743ccd4e780bc9cd85b707de67df72eea1a23";
       flake = false;
@@ -56,6 +60,7 @@
     nil-flake,
     neogit-src,
     d2-vim-src,
+    hunk-nvim-src,
     treesitter-context,
     roslyn-lsp,
     victoria-logs-src,
@@ -88,6 +93,11 @@
       pname = "d2-nvim";
       version = "2024-01-28";
       src = d2-vim-src;
+    };
+    hunk-nvim = pkgs.vimUtils.buildVimPlugin {
+      pname = "hunk-nvim";
+      version = "1.5.0";
+      src = hunk-nvim-src;
     };
     nvim-treesitter-context = pkgs.vimUtils.buildVimPlugin {
         name = "nvim-treesitter-context";
@@ -122,7 +132,7 @@
       inherit tree-sitter-dsl-typings;
     };
     packages = {
-        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang tree-sitter-cli createTreeSitterTypings;
+        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim hunk-nvim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang tree-sitter-cli createTreeSitterTypings;
     };
 
     templates = {
