@@ -37,7 +37,7 @@
   {
     packages.default = project;
     devShells.default = pkgs.mkShell {
-      buildInputs = [ rust-bin pkgs.rust-analyzer ];
+      buildInputs = [ rust-bin pkgs.rust-analyzer cargo-tarpaulin ];
       packages = with pkgs; [ gnumake ];
     };
   });
