@@ -8,6 +8,11 @@
     nil-flake = {
       url = "github:oxalica/nil";
     };
+    gomod2nix-src = {
+      url = "github:tweag/gomod2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.utils.follows = "flake-utils";
+    };
     neogit-src = {
       url = "github:NeogitOrg/neogit";
       flake = false;
@@ -190,6 +195,10 @@
       basic-flake = {
         path = ./templates/basic-flake;
         description = "A basic nix flake template";
+      };
+      supercollider = {
+        path = ./templates/supercollider;
+        description = "A nix flake template for supercollider projects";
       };
     };
   };

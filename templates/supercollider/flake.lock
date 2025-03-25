@@ -1,5 +1,38 @@
 {
   "nodes": {
+    "custom-flakes": {
+      "inputs": {
+        "d2-vim-src": "d2-vim-src",
+        "flake-utils": "flake-utils",
+        "hunk-nvim-src": "hunk-nvim-src",
+        "ionide-nvim-src": "ionide-nvim-src",
+        "naersk": "naersk",
+        "neogit-src": "neogit-src",
+        "nil-flake": "nil-flake",
+        "nixpkgs": "nixpkgs_3",
+        "nurl-flake": "nurl-flake",
+        "roslyn-lsp": "roslyn-lsp",
+        "rust-overlay": "rust-overlay_2",
+        "tree-sitter-cli-src": "tree-sitter-cli-src",
+        "treesitter-context": "treesitter-context",
+        "victoria-logs-src": "victoria-logs-src",
+        "victoria-metrics-src": "victoria-metrics-src",
+        "zig-src": "zig-src"
+      },
+      "locked": {
+        "lastModified": 1742869770,
+        "narHash": "sha256-m7Wu6Natf453UUGXAayMKZpRLe05fLS8BdlGvIAVI3k=",
+        "owner": "zaphar",
+        "repo": "nix-flakes",
+        "rev": "90ff69ad6a27d13811e67391d8414f6931d72759",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zaphar",
+        "repo": "nix-flakes",
+        "type": "github"
+      }
+    },
     "d2-vim-src": {
       "flake": false,
       "locked": {
@@ -39,24 +72,6 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1694529238,
-        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_3": {
-      "inputs": {
-        "systems": "systems_3"
-      },
-      "locked": {
         "lastModified": 1710146030,
         "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
         "owner": "numtide",
@@ -70,24 +85,21 @@
         "type": "github"
       }
     },
-    "gomod2nix-src": {
+    "flake-utils_3": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1742209644,
-        "narHash": "sha256-jMy1XqXqD0/tJprEbUmKilTkvbDY/C0ZGSsJJH4TNCE=",
-        "owner": "tweag",
-        "repo": "gomod2nix",
-        "rev": "8f3534eb8f6c5c3fce799376dc3b91bae6b11884",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
-        "owner": "tweag",
-        "repo": "gomod2nix",
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
@@ -159,7 +171,7 @@
     },
     "nil-flake": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_2",
         "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay"
       },
@@ -238,6 +250,20 @@
         "type": "github"
       }
     },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1744868846,
+        "narHash": "sha256-5RJTdUHDmj12Qsv7XOhuospjAjATNiTMElplWnJE9Hs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ebe4301cbd8f81c4f8d3244b3632338bbeb6d49c",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
     "nurl-flake": {
       "inputs": {
         "nixpkgs": "nixpkgs_4"
@@ -258,23 +284,9 @@
     },
     "root": {
       "inputs": {
-        "d2-vim-src": "d2-vim-src",
-        "flake-utils": "flake-utils",
-        "gomod2nix-src": "gomod2nix-src",
-        "hunk-nvim-src": "hunk-nvim-src",
-        "ionide-nvim-src": "ionide-nvim-src",
-        "naersk": "naersk",
-        "neogit-src": "neogit-src",
-        "nil-flake": "nil-flake",
-        "nixpkgs": "nixpkgs_3",
-        "nurl-flake": "nurl-flake",
-        "roslyn-lsp": "roslyn-lsp",
-        "rust-overlay": "rust-overlay_2",
-        "tree-sitter-cli-src": "tree-sitter-cli-src",
-        "treesitter-context": "treesitter-context",
-        "victoria-logs-src": "victoria-logs-src",
-        "victoria-metrics-src": "victoria-metrics-src",
-        "zig-src": "zig-src"
+        "custom-flakes": "custom-flakes",
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": "nixpkgs_5"
       }
     },
     "roslyn-lsp": {
@@ -297,6 +309,7 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
+          "custom-flakes",
           "nil-flake",
           "nixpkgs"
         ]
@@ -318,6 +331,7 @@
     "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
+          "custom-flakes",
           "nixpkgs"
         ]
       },
@@ -434,16 +448,16 @@
     "victoria-metrics-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1742560966,
-        "narHash": "sha256-iOeGz0qDeKMdafTDqI4/IMkXZ6KLdMDtFie3jwv2uvU=",
+        "lastModified": 1742561002,
+        "narHash": "sha256-ceUc76vJ8KLO6uJTotFOPa6eZsKav0HnmV0I+Hr1KIE=",
         "owner": "VictoriaMetrics",
         "repo": "VictoriaMetrics",
-        "rev": "e950846534ea594940a0f69845ef60a053c98ffd",
+        "rev": "eb672560cf27dcfacaa82ac4dde1f59b26066b3b",
         "type": "github"
       },
       "original": {
         "owner": "VictoriaMetrics",
-        "ref": "v1.114.0",
+        "ref": "v1.114.0-cluster",
         "repo": "VictoriaMetrics",
         "type": "github"
       }
