@@ -33,6 +33,11 @@
       url = "github:VictoriaMetrics/VictoriaMetrics/v1.17.0-victorialogs";
       flake = false;
     };
+    victoria-metrics-src = {
+      # NOTE(zaphar) this should be kept in sync with the package version below.
+      url = "github:VictoriaMetrics/VictoriaMetrics/v1.114.0-cluster";
+      flake = false;
+    };
     ionide-nvim-src = {
       url = "github:ionide/ionide-vim";
       flake = false;
@@ -64,6 +69,7 @@
     treesitter-context,
     roslyn-lsp,
     victoria-logs-src,
+    victoria-metrics-src,
     ionide-nvim-src,
     zig-src,
     tree-sitter-cli-src,
@@ -83,6 +89,11 @@
         src = victoria-logs-src;
         # NOTE(zaphar) this should be kept in sync with the flake input above.
         version = "1.17.0-victorialogs";
+    };
+    victoria-metrics = pkgs.callPackage ./packages/victoria-metrics/default.nix {
+        src = victoria-metrics-src;
+        # NOTE(zaphar) this should be kept in sync with the flake input above.
+        version = "1.114.0";
     };
     neogit-nvim = pkgs.vimUtils.buildVimPlugin {
       pname = "neogit";
@@ -143,6 +154,7 @@
           quint
           quint-lsp
           victoria-logs
+          victoria-metrics
           neogit-nvim
           d2-vim
           hunk-nvim

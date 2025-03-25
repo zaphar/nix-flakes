@@ -1,7 +1,7 @@
 { lib, pkgs, src, version }:
 with pkgs;
 buildGo124Module rec {
-  pname = "VictoriaLogs";
+  pname = "VictoriaMetrics";
   inherit version;
 
   inherit src;
@@ -9,11 +9,17 @@ buildGo124Module rec {
   vendorHash = null;
 
   subPackages = [
-    "app/victoria-logs"
-    "app/vlinsert"
-    "app/vlselect"
-    "app/vlogsgenerator"
-    "app/vlogscli"
+    "app/victoria-metrics"
+    "app/vmagent"
+    "app/vmui"
+    "app/vmauth"
+    "app/vmbackup"
+    "app/vmbackupmanager"
+    "app/vmrestore"
+    "app/vmalert-tool"
+    "app/vmalert"
+    "app/vminsert"
+    "app/vmselect"
   ];
 
   postPatch = ''

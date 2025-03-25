@@ -233,6 +233,7 @@
         "tree-sitter-cli-src": "tree-sitter-cli-src",
         "treesitter-context": "treesitter-context",
         "victoria-logs-src": "victoria-logs-src",
+        "victoria-metrics-src": "victoria-metrics-src",
         "zig-src": "zig-src"
       }
     },
@@ -371,6 +372,23 @@
       "original": {
         "owner": "VictoriaMetrics",
         "ref": "v1.17.0-victorialogs",
+        "repo": "VictoriaMetrics",
+        "type": "github"
+      }
+    },
+    "victoria-metrics-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742561002,
+        "narHash": "sha256-ceUc76vJ8KLO6uJTotFOPa6eZsKav0HnmV0I+Hr1KIE=",
+        "owner": "VictoriaMetrics",
+        "repo": "VictoriaMetrics",
+        "rev": "eb672560cf27dcfacaa82ac4dde1f59b26066b3b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "VictoriaMetrics",
+        "ref": "v1.114.0-cluster",
         "repo": "VictoriaMetrics",
         "type": "github"
       }
