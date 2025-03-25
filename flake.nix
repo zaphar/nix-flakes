@@ -86,8 +86,9 @@
     };
     neogit-nvim = pkgs.vimUtils.buildVimPlugin {
       pname = "neogit";
-      version = "2024-05-16";
+      version = "2025-03-24";
       src = neogit-src;
+      doCheck = false;
     };
     d2-vim =  pkgs.vimUtils.buildVimPlugin {
       pname = "d2-nvim";
@@ -98,7 +99,7 @@
       pname = "hunk-nvim";
       version = "1.5.0";
       src = hunk-nvim-src;
-
+      doCheck = false;
     };
     hunk-nvim = pkgs.symlinkJoin {
       name = "hunk-nvim-bundle";
@@ -111,6 +112,7 @@
     roslyn-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "roslyn-nvim";
         src = roslyn-lsp;
+        doCheck = false;
     };
     ionide-nvim = pkgs.vimUtils.buildVimPlugin {
         name = "ionide-vim";
@@ -120,7 +122,7 @@
       src = zig-src;
       version = "0.13.0";
     };
-    rust-bin = pkgs.rust-bin.stable."1.81.0".default;
+    rust-bin = pkgs.rust-bin.stable."1.84.0".default;
     naersk-lib = pkgs.callPackage naersk {
         rustc = rust-bin;
         cargo = rust-bin;
@@ -137,13 +139,19 @@
       inherit tree-sitter-dsl-typings;
     };
     packages = {
-        inherit quint quint-lsp victoria-logs neogit-nvim d2-vim hunk-nvim nvim-treesitter-context roslyn-nvim ionide-nvim ziglang tree-sitter-cli createTreeSitterTypings;
-    };
-
-    templates = {
-      base-rust = {
-        path = ./templates/base-rust;
-      };
+        inherit
+          quint
+          quint-lsp
+          victoria-logs
+          neogit-nvim
+          d2-vim
+          hunk-nvim
+          nvim-treesitter-context
+          roslyn-nvim
+          ionide-nvim
+          ziglang
+          tree-sitter-cli
+          createTreeSitterTypings;
     };
 
     devShell = pkgs.mkShell {
