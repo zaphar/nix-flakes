@@ -35,7 +35,7 @@
     };
     victoria-metrics-src = {
       # NOTE(zaphar) this should be kept in sync with the package version below.
-      url = "github:VictoriaMetrics/VictoriaMetrics/v1.114.0-cluster";
+      url = "github:VictoriaMetrics/VictoriaMetrics/v1.114.0";
       flake = false;
     };
     ionide-nvim-src = {
@@ -55,6 +55,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     naersk.url = "github:nix-community/naersk";
+    gomod2nix-src.url = "github:nix-community/gomod2nix";
   };
 
   outputs = {
@@ -63,6 +64,7 @@
     flake-utils,
     nurl-flake,
     nil-flake,
+    gomod2nix-src,
     neogit-src,
     d2-vim-src,
     hunk-nvim-src,
@@ -83,6 +85,7 @@
     pkgs = import nixpkgs { inherit system overlays; };
     nurl = nurl-flake.packages."${system}".default;
     nil = nil-flake.packages."${system}".default;
+    gomod2nix = gomod2nix-src.packages."${system}".default;
     quint = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint";
     quint-lsp = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint-language-server";
     victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
@@ -170,6 +173,7 @@
         buildInputs = [
             nurl
             nil
+            gomod2nix
             pkgs.node2nix
         ];
     };
