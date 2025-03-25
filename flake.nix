@@ -30,7 +30,7 @@
     };
     victoria-logs-src = {
       # NOTE(zaphar) this should be kept in sync with the package version below.
-      url = "github:VictoriaMetrics/VictoriaMetrics/v0.34.0-victorialogs";
+      url = "github:VictoriaMetrics/VictoriaMetrics/v1.17.0-victorialogs";
       flake = false;
     };
     ionide-nvim-src = {
@@ -82,7 +82,7 @@
     victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
         src = victoria-logs-src;
         # NOTE(zaphar) this should be kept in sync with the flake input above.
-        version = "0.34.0-victorialogs";
+        version = "1.17.0-victorialogs";
     };
     neogit-nvim = pkgs.vimUtils.buildVimPlugin {
       pname = "neogit";

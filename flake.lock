@@ -361,16 +361,16 @@
     "victoria-logs-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1728382879,
-        "narHash": "sha256-iaV4bjwjLqQcB//xIH16lRFry9ncxej+DLesb3pbm/4=",
+        "lastModified": 1742084154,
+        "narHash": "sha256-Oxy4MntciWUij83zyHixlEDa1DgeG/2ntNN+Nbw8xJg=",
         "owner": "VictoriaMetrics",
         "repo": "VictoriaMetrics",
-        "rev": "6878982c93e34a2bf6ab026b3809073b284b6afc",
+        "rev": "771233ebcd706578c44ed82047c714381a75ab5a",
         "type": "github"
       },
       "original": {
         "owner": "VictoriaMetrics",
-        "ref": "v0.34.0-victorialogs",
+        "ref": "v1.17.0-victorialogs",
         "repo": "VictoriaMetrics",
         "type": "github"
       }

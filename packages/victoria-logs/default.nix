@@ -1,6 +1,6 @@
 { lib, pkgs, src, version }:
 with pkgs;
-buildGoModule rec {
+buildGo124Module rec {
   pname = "VictoriaMetrics";
   inherit version;
 
@@ -18,10 +18,6 @@ buildGoModule rec {
     #
     # This appears to be some kind of test server for development purposes only.
     rm -f app/vmui/packages/vmui/web/{go.mod,main.go}
-
-    # allow any go 1.22 or higher version
-    substituteInPlace go.mod \
-      --replace-fail "go 1.23.1" "go 1.22"
 
     # Increase timeouts in tests to prevent failure on heavily loaded builders
     substituteInPlace lib/storage/storage_test.go \
