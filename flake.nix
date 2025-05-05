@@ -89,6 +89,7 @@
     quint = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint";
     quint-lsp = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint-language-server";
     mcp-hub = (pkgs.callPackage ./packages/npm/default.nix {})."mcp-hub";
+    notion-mcp-server = (pkgs.callPackage ./packages/npm/default.nix {})."@notionhq/notion-mcp-server";
     victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
         src = victoria-logs-src;
         # NOTE(zaphar) this should be kept in sync with the flake input above.
@@ -169,6 +170,7 @@
           tree-sitter-cli
           createTreeSitterTypings
           mcp-hub
+          notion-mcp-server
         ;
     };
 

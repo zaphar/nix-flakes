@@ -1,5 +1,6 @@
 [
 	"@informalsystems/quint",
 	"@informalsystems/quint-language-server",
-  "mcp-hub"
+    "mcp-hub",
+    "@notionhq/notion-mcp-server"
 ]
