@@ -1,4 +1,5 @@
 [
 	"@informalsystems/quint",
-	"@informalsystems/quint-language-server"
+	"@informalsystems/quint-language-server",
+  "mcp-hub"
 ]

@@ -88,6 +88,7 @@
     gomod2nix = gomod2nix-src.packages."${system}".default;
     quint = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint";
     quint-lsp = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint-language-server";
+    mcp-hub = (pkgs.callPackage ./packages/npm/default.nix {})."mcp-hub";
     victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
         src = victoria-logs-src;
         # NOTE(zaphar) this should be kept in sync with the flake input above.
@@ -166,7 +167,9 @@
           ionide-nvim
           ziglang
           tree-sitter-cli
-          createTreeSitterTypings;
+          createTreeSitterTypings
+          mcp-hub
+        ;
     };
 
     devShell = pkgs.mkShell {
