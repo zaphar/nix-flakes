@@ -56,6 +56,10 @@
     };
     naersk.url = "github:nix-community/naersk";
     gomod2nix-src.url = "github:nix-community/gomod2nix";
+    avante-src = {
+      url = "github:yetone/avante.nvim";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -77,12 +81,81 @@
     tree-sitter-cli-src,
     rust-overlay,
     naersk,
+    avante-src,
   }: flake-utils.lib.eachDefaultSystem (system: let
     tree-sitter-dsl-typings = "${tree-sitter-cli-src}/cli/npm/dsl.d.ts";
     overlays = [
       rust-overlay.overlays.default
     ];
     pkgs = import nixpkgs { inherit system overlays; };
+    avante-nvim-lib = pkgs.rustPlatform.buildRustPackage {
+      pname = "avante-nvim-lib";
+      src = avante-src;
+      version = "2025-05-07";
+
+      cargoHash = "sha256-pmnMoNdaIR0i+4kwW3cf01vDQo39QakTCEG9AXA86ck=";
+
+      nativeBuildInputs = [
+        pkgs.pkg-config
+      ];
+      
+      useFetchCargoVendor = true;
+
+      buildInputs = [
+        pkgs.openssl
+      ];
+
+      buildFeatures = [ "luajit" ];
+
+      checkFlags = [
+        # Disabled because they access the network.
+        "--skip=test_hf"
+        "--skip=test_public_url"
+        "--skip=test_roundtrip"
+        "--skip=test_fetch_md"
+      ];
+    };
+    avante-nvim = pkgs.vimUtils.buildVimPlugin {
+      pname = "neogit";
+      version = "2025-03-24";
+      src = avante-src;
+      doCheck = false;
+      dependencies = with pkgs.vimPlugins; [
+            plenary-nvim
+            nui-nvim
+            nvim-treesitter
+            dressing-nvim
+      ];
+      postInstall =
+        let
+          ext = pkgs.stdenv.hostPlatform.extensions.sharedLibrary;
+        in
+        ''
+          mkdir -p $out/build
+          cp ${avante-nvim-lib}/lib/*${ext} $out/build/
+        '';
+      doInstallCheck = true;
+      nvimRequireCheck = "avante";
+
+      meta = {
+        description = "Neovim plugin designed to emulate the behaviour of the Cursor AI IDE";
+        homepage = "https://github.com/yetone/avante.nvim";
+        license = pkgs.lib.licenses.asl20;
+        maintainers = with pkgs.lib.maintainers; [
+          ttrei
+          aarnphm
+        ];
+      };
+    };
+    neovim-avante = pkgs.wrapNeovim pkgs.neovim-unwrapped {
+      configure = {
+        packages.myPlugins = {
+          start = [
+            avante-nvim
+          ];
+        };
+      };
+    };
     nurl = nurl-flake.packages."${system}".default;
     nil = nil-flake.packages."${system}".default;
     gomod2nix = gomod2nix-src.packages."${system}".default;
@@ -171,6 +244,9 @@
           createTreeSitterTypings
           mcp-hub
           notion-mcp-server
+          avante-nvim-lib
+          avante-nvim
+          neovim-avante
         ;
     };
 

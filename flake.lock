@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "avante-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746602870,
+        "narHash": "sha256-REBOplEe2muqfVLwcpTAmXpTrHlzSfhbh8T0litDTDA=",
+        "owner": "yetone",
+        "repo": "avante.nvim",
+        "rev": "113913355a6b9c0fbd62cf52d0cf3e5671d0e34a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yetone",
+        "repo": "avante.nvim",
+        "type": "github"
+      }
+    },
     "d2-vim-src": {
       "flake": false,
       "locked": {
@@ -272,6 +288,7 @@
     },
     "root": {
       "inputs": {
+        "avante-src": "avante-src",
         "d2-vim-src": "d2-vim-src",
         "flake-utils": "flake-utils",
         "gomod2nix-src": "gomod2nix-src",
