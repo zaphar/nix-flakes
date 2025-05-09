@@ -60,6 +60,7 @@
       url = "github:yetone/avante.nvim";
       flake = false;
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {
@@ -82,6 +83,7 @@
     rust-overlay,
     naersk,
     avante-src,
+    neovim-nightly-overlay,
   }: flake-utils.lib.eachDefaultSystem (system: let
     tree-sitter-dsl-typings = "${tree-sitter-cli-src}/cli/npm/dsl.d.ts";
     overlays = [
@@ -105,7 +107,7 @@
         pkgs.openssl
       ];
 
-      buildFeatures = [ "luajit" ];
+      buildFeatures = [ "lua51" ];
 
       checkFlags = [
         # Disabled because they access the network.
@@ -116,7 +118,7 @@
       ];
     };
     avante-nvim = pkgs.vimUtils.buildVimPlugin {
-      pname = "neogit";
+      pname = "avante-nvim";
       version = "2025-03-24";
       src = avante-src;
       doCheck = false;
@@ -132,7 +134,9 @@
         in
         ''
           mkdir -p $out/build
-          cp ${avante-nvim-lib}/lib/*${ext} $out/build/
+          cp ${avante-nvim-lib}/lib/libavante_repo_map${ext} $out/build/avante_repo_map${ext}
+          cp ${avante-nvim-lib}/lib/libavante_templates${ext} $out/build/avante_templates${ext}
+          cp ${avante-nvim-lib}/lib/libavante_tokenizers${ext} $out/build/avante_tokenizers${ext}
         '';
       doInstallCheck = true;
       nvimRequireCheck = "avante";
