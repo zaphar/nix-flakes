@@ -28,16 +28,6 @@
       url = "github:zaphar/roslyn.nvim/main";
       flake = false;
     };
-    victoria-logs-src = {
-      # NOTE(zaphar) this should be kept in sync with the package version below.
-      url = "github:VictoriaMetrics/VictoriaMetrics/v1.17.0-victorialogs";
-      flake = false;
-    };
-    victoria-metrics-src = {
-      # NOTE(zaphar) this should be kept in sync with the package version below.
-      url = "github:VictoriaMetrics/VictoriaMetrics/v1.114.0";
-      flake = false;
-    };
     ionide-nvim-src = {
       url = "github:ionide/ionide-vim";
       flake = false;
@@ -75,15 +65,12 @@
     hunk-nvim-src,
     treesitter-context,
     roslyn-lsp,
-    victoria-logs-src,
-    victoria-metrics-src,
     ionide-nvim-src,
     zig-src,
     tree-sitter-cli-src,
     rust-overlay,
     naersk,
     avante-src,
-    neovim-nightly-overlay,
   }: flake-utils.lib.eachDefaultSystem (system: let
     tree-sitter-dsl-typings = "${tree-sitter-cli-src}/cli/npm/dsl.d.ts";
     overlays = [
@@ -166,17 +153,10 @@
     quint = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint";
     quint-lsp = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint-language-server";
     mcp-hub = (pkgs.callPackage ./packages/npm/default.nix {})."mcp-hub";
+    claude-code = (pkgs.callPackage ./packages/npm/default.nix {})."@anthropic-ai/claude-code";
     notion-mcp-server = (pkgs.callPackage ./packages/npm/default.nix {})."@notionhq/notion-mcp-server";
-    victoria-logs = pkgs.callPackage ./packages/victoria-logs/default.nix {
-        src = victoria-logs-src;
-        # NOTE(zaphar) this should be kept in sync with the flake input above.
-        version = "1.17.0-victorialogs";
-    };
-    victoria-metrics = pkgs.callPackage ./packages/victoria-metrics/default.nix {
-        src = victoria-metrics-src;
-        # NOTE(zaphar) this should be kept in sync with the flake input above.
-        version = "1.114.0";
-    };
+    victoria-logs = pkgs.victoriametrics;
+    victoria-metrics = pkgs.victoriametrics;
     neogit-nvim = pkgs.vimUtils.buildVimPlugin {
       pname = "neogit";
       version = "2025-03-24";
@@ -235,6 +215,7 @@
         inherit
           quint
           quint-lsp
+          claude-code
           victoria-logs
           victoria-metrics
           neogit-nvim

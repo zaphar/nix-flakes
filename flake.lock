@@ -436,11 +436,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1746752734,
-        "narHash": "sha256-AJIP459j6O3mdDJW67Zus/y53kb6TGB5EjNeizPNcm8=",
+        "lastModified": 1748910217,
+        "narHash": "sha256-JXvbSsPx2Xw8rhrtvzEZZ6+Ew1w9x0pJ8cC0s3eqPa0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c8c2643036b25b027fe4332ada9ffc2cd9966193",
+        "rev": "1680e07b7f4902727e160dd93378200eeaa14524",
         "type": "github"
       },
       "original": {
@@ -501,8 +501,6 @@
         "rust-overlay": "rust-overlay_2",
         "tree-sitter-cli-src": "tree-sitter-cli-src",
         "treesitter-context": "treesitter-context",
-        "victoria-logs-src": "victoria-logs-src",
-        "victoria-metrics-src": "victoria-metrics-src",
         "zig-src": "zig-src"
       }
     },
@@ -661,40 +659,6 @@
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter-context",
         "rev": "e6b743ccd4e780bc9cd85b707de67df72eea1a23",
-        "type": "github"
-      }
-    },
-    "victoria-logs-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1742084154,
-        "narHash": "sha256-Oxy4MntciWUij83zyHixlEDa1DgeG/2ntNN+Nbw8xJg=",
-        "owner": "VictoriaMetrics",
-        "repo": "VictoriaMetrics",
-        "rev": "771233ebcd706578c44ed82047c714381a75ab5a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "VictoriaMetrics",
-        "ref": "v1.17.0-victorialogs",
-        "repo": "VictoriaMetrics",
-        "type": "github"
-      }
-    },
-    "victoria-metrics-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1742560966,
-        "narHash": "sha256-iOeGz0qDeKMdafTDqI4/IMkXZ6KLdMDtFie3jwv2uvU=",
-        "owner": "VictoriaMetrics",
-        "repo": "VictoriaMetrics",
-        "rev": "e950846534ea594940a0f69845ef60a053c98ffd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "VictoriaMetrics",
-        "ref": "v1.114.0",
-        "repo": "VictoriaMetrics",
         "type": "github"
       }
     },
