@@ -1,6 +1,6 @@
 build: build-tree-sitter-cli victoria languages nvim build-claude-code
 
-nvim: build-neogit-nvim build-d2-vim build-nvim-treesitter-context build-roslyn-nvim build-ionide-nvim build-hunk-nvim
+nvim: build-neogit-nvim build-d2-vim build-nvim-treesitter-context build-roslyn-nvim build-ionide-nvim build-hunk-nvim build-claude-code-nvim
 
 languages: build-quint build-quint-lsp build-ziglang
 

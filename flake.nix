@@ -54,7 +54,6 @@
       url = "github:yetone/avante.nvim";
       flake = false;
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {
