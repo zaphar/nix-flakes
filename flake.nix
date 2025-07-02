@@ -32,6 +32,10 @@
       url = "github:ionide/ionide-vim";
       flake = false;
     };
+    claude-code-nvim-src = {
+      url = "github:greggh/claude-code.nvim";
+      flake = false;
+    };
     zig-src = {
       url = "github:ziglang/zig/0.13.0";
       flake = false;
@@ -66,6 +70,7 @@
     treesitter-context,
     roslyn-lsp,
     ionide-nvim-src,
+    claude-code-nvim-src,
     zig-src,
     tree-sitter-cli-src,
     rust-overlay,
@@ -191,6 +196,10 @@
         name = "ionide-vim";
         src = ionide-nvim-src;
     };
+    claude-code-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "claude-code-vim";
+        src = claude-code-nvim-src;
+    };
     ziglang = pkgs.callPackage ./packages/ziglang/default.nix {
       src = zig-src;
       version = "0.13.0";
@@ -232,6 +241,7 @@
           avante-nvim-lib
           avante-nvim
           neovim-avante
+          claude-code-nvim
         ;
     };
 
