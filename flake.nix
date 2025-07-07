@@ -44,6 +44,18 @@
       url = "github:tree-sitter/tree-sitter";
       flake = false;
     };
+    opencode-src = {
+      url = "https://registry.npmjs.org/opencode-ai/-/opencode-ai-0.2.5.tgz";
+      flake = false;
+    };
+    opencode-platform-linux-amd64-src = {
+      url = "https://registry.npmjs.org/opencode-darwin-x64/-/opencode-darwin-x64-0.2.5.tgz";
+      flake = false;
+    };
+    opencode-platform-darwin-arm64-src = {
+      url = "https://registry.npmjs.org/opencode-darwin-arm64/-/opencode-darwin-arm64-0.2.5.tgz";
+      flake = false;
+    };
     rust-overlay = {
       url = "github:oxalica/rust-overlay?ref=stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -75,12 +87,22 @@
     rust-overlay,
     naersk,
     avante-src,
+    opencode-src,
+    opencode-platform-linux-amd64-src,
+    opencode-platform-darwin-arm64-src
   }: flake-utils.lib.eachDefaultSystem (system: let
     tree-sitter-dsl-typings = "${tree-sitter-cli-src}/cli/npm/dsl.d.ts";
     overlays = [
       rust-overlay.overlays.default
     ];
     pkgs = import nixpkgs { inherit system overlays; };
+    opencode = (pkgs.callPackage ./packages/opencode-ai/default.nix {
+      src = opencode-src;
+      platformLinuxSrc = opencode-platform-linux-amd64-src;
+      platformDarwinSrc = opencode-platform-darwin-arm64-src;
+      version = "v0.2.5";
+      inherit system pkgs;
+    }).opencode;
     avante-nvim-lib = pkgs.rustPlatform.buildRustPackage {
       pname = "avante-nvim-lib";
       src = avante-src;
@@ -241,6 +263,7 @@
           avante-nvim
           neovim-avante
           claude-code-nvim
+          opencode
         ;
     };
 

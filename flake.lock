@@ -302,6 +302,45 @@
         "type": "github"
       }
     },
+    "opencode-platform-darwin-arm64-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 499162500,
+        "narHash": "sha256-TJVeEjYO7uWEqpkCQsTrPwShKAbWalvIRiFmzX6Mvxg=",
+        "type": "tarball",
+        "url": "https://registry.npmjs.org/opencode-darwin-arm64/-/opencode-darwin-arm64-0.2.5.tgz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://registry.npmjs.org/opencode-darwin-arm64/-/opencode-darwin-arm64-0.2.5.tgz"
+      }
+    },
+    "opencode-platform-linux-amd64-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 499162500,
+        "narHash": "sha256-W8ZC8TU5/228aUgB40HwFTN9CDDkFVhoQkTXyVcPv24=",
+        "type": "tarball",
+        "url": "https://registry.npmjs.org/opencode-darwin-x64/-/opencode-darwin-x64-0.2.5.tgz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://registry.npmjs.org/opencode-darwin-x64/-/opencode-darwin-x64-0.2.5.tgz"
+      }
+    },
+    "opencode-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 499162500,
+        "narHash": "sha256-XUk+e5Z2YMJ7lNN7hSETNMBxmMZ0tkec72efo5ZvQgI=",
+        "type": "tarball",
+        "url": "https://registry.npmjs.org/opencode-ai/-/opencode-ai-0.2.5.tgz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://registry.npmjs.org/opencode-ai/-/opencode-ai-0.2.5.tgz"
+      }
+    },
     "root": {
       "inputs": {
         "avante-src": "avante-src",
@@ -316,6 +355,9 @@
         "nil-flake": "nil-flake",
         "nixpkgs": "nixpkgs_4",
         "nurl-flake": "nurl-flake",
+        "opencode-platform-darwin-arm64-src": "opencode-platform-darwin-arm64-src",
+        "opencode-platform-linux-amd64-src": "opencode-platform-linux-amd64-src",
+        "opencode-src": "opencode-src",
         "roslyn-lsp": "roslyn-lsp",
         "rust-overlay": "rust-overlay_2",
         "tree-sitter-cli-src": "tree-sitter-cli-src",

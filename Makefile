@@ -1,4 +1,4 @@
-build: build-tree-sitter-cli victoria languages nvim build-claude-code
+build: build-tree-sitter-cli victoria languages nvim build-claude-code build-opencode
 
 nvim: build-neogit-nvim build-d2-vim build-nvim-treesitter-context build-roslyn-nvim build-ionide-nvim build-hunk-nvim build-claude-code-nvim
 

@@ -40,13 +40,13 @@ let
         sha512 = "iUKgm52T8HOE/makSxjqoWhe95ZJA1/G1sYsGev2JDKUSS14KAgg1LHb+Ba+IPow0xflbnSkOsZcO08C7w1gYw==";
       };
     };
-    "@modelcontextprotocol/sdk-1.13.3" = {
+    "@modelcontextprotocol/sdk-1.15.0" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.13.3";
+      version = "1.15.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.13.3.tgz";
-        sha512 = "bGwA78F/U5G2jrnsdRkPY3IwIwZeWUEfb5o764b79lb0rJmMT76TLwKhdNZOWakOQtedYefwIR4emisEMvInKA==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.15.0.tgz";
+        sha512 = "67hnl/ROKdb03Vuu0YOr+baKTvf1/5YBHBm9KnZdjdAh8hjt4FRCPD5ucwxGB237sBpzlqQsLy1PFu7z/ekZ9Q==";
       };
     };
     "@octokit/endpoint-9.0.6" = {
@@ -2255,10 +2255,10 @@ in
   mcp-hub = nodeEnv.buildNodePackage {
     name = "mcp-hub";
     packageName = "mcp-hub";
-    version = "3.7.0";
+    version = "3.7.1";
     src = fetchurl {
-      url = "https://registry.npmjs.org/mcp-hub/-/mcp-hub-3.7.0.tgz";
-      sha512 = "B1ST0hdsof0vjhmzGSc3ypHgV1/Uih9vPXkuR2K2EaGtUO8pTlePYIwJDUH+97rKm9jd6/oTlHHIOYDOkLcvyA==";
+      url = "https://registry.npmjs.org/mcp-hub/-/mcp-hub-3.7.1.tgz";
+      sha512 = "c+j0HaWt1sjPojvyjxKlkDZXlPe5mIxUqBU5aO/6ludZaa1En2NrKGalceCeyedsVUf8spauAe1eiUUX4WgPwQ==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -2279,7 +2279,7 @@ in
       sha512 = "+27NebqgWlUC3FgNggOmoVKc3aK78MAR12ARY6CZJn2ZXt5UHqIRjTSOI8inH7/2+Q/hotsTTDIqvD/MKOUNIA==";
     };
     dependencies = [
-      (sources."@modelcontextprotocol/sdk-1.13.3" // {
+      (sources."@modelcontextprotocol/sdk-1.15.0" // {
         dependencies = [
           sources."express-5.1.0"
         ];
@@ -2466,16 +2466,31 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "1.0.40";
+    version = "1.0.43";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.40.tgz";
-      sha512 = "qC2SFowyHWvvik2ZbNCuE9V6+VXIsk2XB/liFMJxZBk0C8y2Hc6LEqGltKTjaFwkq2+NPcrImE4RZwBPfh2N3A==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.43.tgz";
+      sha512 = "VnuRK4s/R9ZRTkwH4gUjsp4SiBQXq7Y0B47OtgeXIZYVQYkhTW8m+E0IisFzXXFIyTQrE0SodGCpvgLhAYzGCg==";
     };
     buildInputs = globalBuildInputs;
     meta = {
       description = "Use Claude, Anthropic's AI assistant, right from your terminal. Claude can understand your codebase, edit files, run terminal commands, and handle entire workflows for you.";
       homepage = "https://github.com/anthropics/claude-code";
       license = "SEE LICENSE IN README.md";
+    };
+    production = true;
+    bypassCache = true;
+    reconstructLock = true;
+  };
+  opencode-ai = nodeEnv.buildNodePackage {
+    name = "opencode-ai";
+    packageName = "opencode-ai";
+    version = "0.1.194";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/opencode-ai/-/opencode-ai-0.1.194.tgz";
+      sha512 = "SsRKuUak10T63YrXsVcwF45Zz0zOmEkPbbeDV++mEG1d5NXuhiqGPvqE05MJau/CD0nrstuNmU5f4KN6SsKgtQ==";
+    };
+    buildInputs = globalBuildInputs;
+    meta = {
     };
     production = true;
     bypassCache = true;
