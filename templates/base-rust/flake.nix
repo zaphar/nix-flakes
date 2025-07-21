@@ -10,7 +10,7 @@
  
   };
 
-  outputs = {self, nixpkgs, flake-utils, rust-overlay, naersk, flake-compat}:
+  outputs = {nixpkgs, flake-utils, rust-overlay, naersk, ...}:
   flake-utils.lib.eachDefaultSystem (system: let
     overlays = [
       rust-overlay.overlays.default
@@ -37,7 +37,7 @@
   {
     packages.default = project;
     devShells.default = pkgs.mkShell {
-      buildInputs = [ rust-bin pkgs.rust-analyzer cargo-tarpaulin ];
+      buildInputs = [ rust-bin pkgs.rust-analyzer pkgs.cargo-tarpaulin ];
       packages = with pkgs; [ gnumake ];
     };
   });
