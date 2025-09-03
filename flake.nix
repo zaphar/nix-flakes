@@ -66,6 +66,10 @@
       url = "github:yetone/avante.nvim";
       flake = false;
     };
+    lua-json5-src = {
+      url = "github:Joakker/lua-json5";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -87,6 +91,7 @@
     rust-overlay,
     naersk,
     avante-src,
+    lua-json5-src,
     opencode-src,
     opencode-platform-linux-amd64-src,
     opencode-platform-darwin-arm64-src
@@ -237,6 +242,11 @@
     createTreeSitterTypings = pkgs.writeShellScript "createTreeSitterTypings.sh" ''
       cat ${tree-sitter-dsl-typings} > dsl.d.ts
     '';
+    lua-json5-packages = pkgs.callPackage ./packages/lua-json5/default.nix {
+      src = lua-json5-src;
+    };
+    lua-json5-nvim = lua-json5-packages.lua-json5-nvim;
+    lua-json5-lib = lua-json5-packages.lua-json5-lib;
   in {
     files = {
       inherit tree-sitter-dsl-typings;
@@ -263,6 +273,8 @@
           avante-nvim
           neovim-avante
           claude-code-nvim
+          lua-json5-nvim
+          lua-json5-lib
           opencode
         ;
     };

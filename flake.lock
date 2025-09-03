@@ -153,6 +153,22 @@
         "type": "github"
       }
     },
+    "lua-json5-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756863169,
+        "narHash": "sha256-mtf4nI9Kh2ziTGAbI0/LVBBw5cbtrEPcOHWkOnRKkDw=",
+        "owner": "Joakker",
+        "repo": "lua-json5",
+        "rev": "d710c494586f369eba787902e665fa0bcb5705ba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Joakker",
+        "repo": "lua-json5",
+        "type": "github"
+      }
+    },
     "naersk": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -350,6 +366,7 @@
         "gomod2nix-src": "gomod2nix-src",
         "hunk-nvim-src": "hunk-nvim-src",
         "ionide-nvim-src": "ionide-nvim-src",
+        "lua-json5-src": "lua-json5-src",
         "naersk": "naersk",
         "neogit-src": "neogit-src",
         "nil-flake": "nil-flake",

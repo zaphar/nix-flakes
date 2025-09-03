@@ -18,3 +18,10 @@ update-npm:
 	#sed -e 's#src = \./\.#src = "$${quint-src}/quint"#' -e 's#nodeEnv, #quint-src, nodeEnv, #' -i '' nix/packages/quint/node-packages.nix
 	#rm -f nix/packages/quint/package*.json
 
+generate-lua-json5-lockfile:
+	rm -rf /tmp/lua-json5-clone
+	git clone https://github.com/Joakker/lua-json5.git /tmp/lua-json5-clone
+	cd /tmp/lua-json5-clone && nix run nixpkgs#cargo -- generate-lockfile
+	cp /tmp/lua-json5-clone/Cargo.lock packages/lua-json5/
+	rm -rf /tmp/lua-json5-clone
+
