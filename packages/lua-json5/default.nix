@@ -49,9 +49,7 @@ let
       in
       ''
         mkdir -p $out/lua
-        cp ${lua-json5-lib}/lib/*json5${ext} $out/lua/ || true
-        # Also try alternative library names
-        cp ${lua-json5-lib}/lib/libjson5${ext} $out/lua/json5${ext} || true
+        cp ${lua-json5-lib}/lib/liblua_json5${ext} $out/lua/json5${ext} || true
       '';
 
     doCheck = false;
