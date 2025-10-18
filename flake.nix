@@ -37,7 +37,7 @@
       flake = false;
     };
     zig-src = {
-      url = "github:ziglang/zig/0.13.0";
+      url = "github:ziglang/zig/0.15.1";
       flake = false;
     };
     tree-sitter-cli-src = {

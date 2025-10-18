@@ -522,16 +522,16 @@
     "zig-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1717700711,
-        "narHash": "sha256-5qSiTq+UWGOwjDVZMIrAt2cDKHkyNPBSAEjpRQUByFM=",
+        "lastModified": 1755645653,
+        "narHash": "sha256-RFbJYeTHj/aNjWSsG+HHtmOL1VY4dpvJjbx04OhF4bI=",
         "owner": "ziglang",
         "repo": "zig",
-        "rev": "cf90dfd3098bef5b3c22d5ab026173b3c357f2dd",
+        "rev": "3db960767d12b6214bcf43f1966a037c7a586a12",
         "type": "github"
       },
       "original": {
         "owner": "ziglang",
-        "ref": "0.13.0",
+        "ref": "0.15.1",
         "repo": "zig",
         "type": "github"
       }
