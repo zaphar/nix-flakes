@@ -70,6 +70,10 @@
       url = "github:Joakker/lua-json5";
       flake = false;
     };
+    wasm-bindgen-flake-0-2-105 = {
+      url = "github:wasm-bindgen/wasm-bindgen/0.2.105";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -94,7 +98,8 @@
     lua-json5-src,
     opencode-src,
     opencode-platform-linux-amd64-src,
-    opencode-platform-darwin-arm64-src
+    opencode-platform-darwin-arm64-src,
+    wasm-bindgen-flake-0-2-105
   }: flake-utils.lib.eachDefaultSystem (system: let
     tree-sitter-dsl-typings = "${tree-sitter-cli-src}/cli/npm/dsl.d.ts";
     overlays = [
@@ -245,6 +250,12 @@
     lua-json5-packages = pkgs.callPackage ./packages/lua-json5/default.nix {
       src = lua-json5-src;
     };
+    wasm-bindgen-0-2-105 = pkgs.callPackage ./packages/wasm-bindgen/default.nix {
+      version = "0.2.105";
+      cargoHash = "sha256-a2X9bzwnMWNt0fTf30qAiJ4noal/ET1jEtf5fBFj5OU=";
+      crateHash = "sha256-zLPFFgnqAWq5R2KkaTGAYqVQswfBEYm9x3OPjx8DJRY=";
+    };
+    wasm-bindgen = wasm-bindgen-0-2-105;
     lua-json5-nvim = lua-json5-packages.lua-json5-nvim;
     lua-json5-lib = lua-json5-packages.lua-json5-lib;
   in {
@@ -276,6 +287,8 @@
           lua-json5-nvim
           lua-json5-lib
           opencode
+          wasm-bindgen-0-2-105
+          wasm-bindgen
         ;
     };
 

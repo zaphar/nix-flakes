@@ -4,14 +4,16 @@
 	lib,
 	stdenv,
 	cmake,
-	llvmPackages_18,
+	llvmPackages_20,
 	libxml2,
 	zlib,
 	coreutils,
 	callPackage,
 	...
 }:
-
+let
+    llvmPackages = llvmPackages_20;
+in
 stdenv.mkDerivation (finalAttrs: {
   pname = "zig";
 
@@ -19,13 +21,13 @@ stdenv.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     cmake
-    llvmPackages_18.llvm.dev
+    llvmPackages.llvm.dev
   ];
 
   buildInputs = [
     libxml2
     zlib
-  ] ++ (with llvmPackages_18; [
+  ] ++ (with llvmPackages; [
     libclang
     lld
     llvm

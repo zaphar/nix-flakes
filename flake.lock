@@ -19,11 +19,11 @@
     "claude-code-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1749595024,
-        "narHash": "sha256-jKWm3lN5nyZ1BsIKMFt4EQhb0n+iyEyOw79Rj/A3yZI=",
+        "lastModified": 1751485230,
+        "narHash": "sha256-ZEIPutxhgyaAhq+fJw1lTO781IdjTXbjKy5yKgqSLjM=",
         "owner": "greggh",
         "repo": "claude-code.nvim",
-        "rev": "275c47615f4424a0329290ce1d0c18a8320fd8b0",
+        "rev": "c9a31e51069977edaad9560473b5d031fcc5d38b",
         "type": "github"
       },
       "original": {
@@ -271,11 +271,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1748910217,
-        "narHash": "sha256-JXvbSsPx2Xw8rhrtvzEZZ6+Ew1w9x0pJ8cC0s3eqPa0=",
+        "lastModified": 1761833210,
+        "narHash": "sha256-ZAcz2XaNfSMj2g0w82F9wu9JtZ3sHz13u1Mpas5iT3k=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1680e07b7f4902727e160dd93378200eeaa14524",
+        "rev": "69ac30242312b3fad48d2d840e203084dd682e7e",
         "type": "github"
       },
       "original": {
@@ -379,6 +379,7 @@
         "rust-overlay": "rust-overlay_2",
         "tree-sitter-cli-src": "tree-sitter-cli-src",
         "treesitter-context": "treesitter-context",
+        "wasm-bindgen-flake-0-2-105": "wasm-bindgen-flake-0-2-105",
         "zig-src": "zig-src"
       }
     },
@@ -427,11 +428,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742351546,
-        "narHash": "sha256-GPubFcOXyi8TVm1xpltHYPcfGr+iO+if2u/EtzFVnHQ=",
+        "lastModified": 1761851069,
+        "narHash": "sha256-VHqBFyQdXE10lvBaNCaJSD5xw1WH6Thqq92OIB6MqZo=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "b0a7450168c62a46f87d204280e6d9d1c0292671",
+        "rev": "0881bcdf6c34cd3ba558b19d7a74d8ffc9e1fff0",
         "type": "github"
       },
       "original": {
@@ -516,6 +517,23 @@
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter-context",
         "rev": "e6b743ccd4e780bc9cd85b707de67df72eea1a23",
+        "type": "github"
+      }
+    },
+    "wasm-bindgen-flake-0-2-105": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761591051,
+        "narHash": "sha256-NME7whCxMibTJgmTz3iHYUf6Va5MzZb/4m3EGyfu6JQ=",
+        "owner": "wasm-bindgen",
+        "repo": "wasm-bindgen",
+        "rev": "f72a9d68d90cd75513e18859403f0139cc6913a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wasm-bindgen",
+        "ref": "0.2.105",
+        "repo": "wasm-bindgen",
         "type": "github"
       }
     },
