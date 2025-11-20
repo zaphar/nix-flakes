@@ -74,6 +74,10 @@
       url = "github:wasm-bindgen/wasm-bindgen/0.2.105";
       flake = false;
     };
+    helix-db-src = {
+      url = "github:HelixDB/helix-db";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -99,6 +103,7 @@
     opencode-src,
     opencode-platform-linux-amd64-src,
     opencode-platform-darwin-arm64-src,
+    helix-db-src,
     wasm-bindgen-flake-0-2-105
   }: flake-utils.lib.eachDefaultSystem (system: let
     tree-sitter-dsl-typings = "${tree-sitter-cli-src}/cli/npm/dsl.d.ts";
@@ -113,6 +118,16 @@
       version = "v0.2.5";
       inherit system pkgs;
     }).opencode;
+    rust-bin = pkgs.rust-bin.stable."1.91.1".default;
+    naersk-lib = pkgs.callPackage naersk {
+        rustc = rust-bin;
+        cargo = rust-bin;
+    };
+    helix-db = naersk-lib.buildPackage {
+      name = "helix-db";
+      src = helix-db-src;
+      version = "2025-11-19";
+    };
     avante-nvim-lib = pkgs.rustPlatform.buildRustPackage {
       pname = "avante-nvim-lib";
       src = avante-src;
@@ -235,11 +250,6 @@
       src = zig-src;
       version = "0.13.0";
     };
-    rust-bin = pkgs.rust-bin.stable."1.84.0".default;
-    naersk-lib = pkgs.callPackage naersk {
-        rustc = rust-bin;
-        cargo = rust-bin;
-    };
     tree-sitter-cli = naersk-lib.buildPackage {
       src = tree-sitter-cli-src;
       root = tree-sitter-cli-src;
@@ -289,9 +299,19 @@
           opencode
           wasm-bindgen-0-2-105
           wasm-bindgen
+          helix-db
         ;
     };
-
+    apps = {
+      helix-cli = {
+        type = "app";
+        program = "${helix-db}/bin/helix";
+      };
+      helix-container = {
+        type = "app";
+        program = "${helix-db}/bin/helix-container";
+      };
+    };
     devShell = pkgs.mkShell {
         buildInputs = [
             nurl

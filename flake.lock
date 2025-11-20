@@ -121,6 +121,22 @@
         "type": "github"
       }
     },
+    "helix-db-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762933829,
+        "narHash": "sha256-/7BS+7ZryWOmmSx1M/8PmQGHkj5M0/UmJHrLhYf7y3o=",
+        "owner": "HelixDB",
+        "repo": "helix-db",
+        "rev": "634fa949d2f0a061bf0b1c4e065a5f4e7dd1e4dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HelixDB",
+        "repo": "helix-db",
+        "type": "github"
+      }
+    },
     "hunk-nvim-src": {
       "flake": false,
       "locked": {
@@ -364,6 +380,7 @@
         "d2-vim-src": "d2-vim-src",
         "flake-utils": "flake-utils",
         "gomod2nix-src": "gomod2nix-src",
+        "helix-db-src": "helix-db-src",
         "hunk-nvim-src": "hunk-nvim-src",
         "ionide-nvim-src": "ionide-nvim-src",
         "lua-json5-src": "lua-json5-src",
@@ -428,11 +445,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761851069,
-        "narHash": "sha256-VHqBFyQdXE10lvBaNCaJSD5xw1WH6Thqq92OIB6MqZo=",
+        "lastModified": 1763347184,
+        "narHash": "sha256-6QH8hpCYJxifvyHEYg+Da0BotUn03BwLIvYo3JAxuqQ=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "0881bcdf6c34cd3ba558b19d7a74d8ffc9e1fff0",
+        "rev": "08895cce80433978d5bfd668efa41c5e24578cbd",
         "type": "github"
       },
       "original": {
