@@ -32,6 +32,7 @@
       url = "github:ionide/ionide-vim";
       flake = false;
     };
+    # TODO(jeremy): This might be unmaintained now...
     claude-code-nvim-src = {
       url = "github:greggh/claude-code.nvim";
       flake = false;
