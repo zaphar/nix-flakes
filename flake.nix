@@ -62,6 +62,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     naersk.url = "github:nix-community/naersk";
+    crane.url = "github:ipetkov/crane";
     gomod2nix-src.url = "github:nix-community/gomod2nix";
     avante-src = {
       url = "github:yetone/avante.nvim";
@@ -99,6 +100,7 @@
     tree-sitter-cli-src,
     rust-overlay,
     naersk,
+    crane,
     avante-src,
     lua-json5-src,
     opencode-src,
@@ -124,6 +126,7 @@
         rustc = rust-bin;
         cargo = rust-bin;
     };
+    craneLib = crane.mkLib pkgs;
     helix-db = naersk-lib.buildPackage {
       name = "helix-db";
       src = helix-db-src;
@@ -259,6 +262,7 @@
       cat ${tree-sitter-dsl-typings} > dsl.d.ts
     '';
     lua-json5-packages = pkgs.callPackage ./packages/lua-json5/default.nix {
+      inherit craneLib;
       src = lua-json5-src;
     };
     wasm-bindgen-0-2-105 = pkgs.callPackage ./packages/wasm-bindgen/default.nix {

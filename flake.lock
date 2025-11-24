@@ -32,6 +32,21 @@
         "type": "github"
       }
     },
+    "crane": {
+      "locked": {
+        "lastModified": 1765145449,
+        "narHash": "sha256-aBVHGWWRzSpfL++LubA0CwOOQ64WNLegrYHwsVuVN7A=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "69f538cdce5955fcd47abfed4395dc6d5194c1c5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "d2-vim-src": {
       "flake": false,
       "locked": {
@@ -287,11 +302,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1761833210,
-        "narHash": "sha256-ZAcz2XaNfSMj2g0w82F9wu9JtZ3sHz13u1Mpas5iT3k=",
+        "lastModified": 1765467293,
+        "narHash": "sha256-eyhRznbguB0zKMPChNhQpiFqzxoTHsK9FPVpBOSy8ZI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "69ac30242312b3fad48d2d840e203084dd682e7e",
+        "rev": "7531f2f39e429476d2828d5657816f5bdbae346b",
         "type": "github"
       },
       "original": {
@@ -377,6 +392,7 @@
       "inputs": {
         "avante-src": "avante-src",
         "claude-code-nvim-src": "claude-code-nvim-src",
+        "crane": "crane",
         "d2-vim-src": "d2-vim-src",
         "flake-utils": "flake-utils",
         "gomod2nix-src": "gomod2nix-src",

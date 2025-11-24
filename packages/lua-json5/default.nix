@@ -1,5 +1,5 @@
 { lib
-, rustPlatform
+, craneLib
 , pkg-config
 , lua
 , src
@@ -8,16 +8,11 @@
 
 let
   # Build the Rust library
-  lua-json5-lib = rustPlatform.buildRustPackage {
+  lua-json5-lib = craneLib.buildPackage {
     pname = "lua-json5-lib";
     version = "2024-12-01";
     inherit src;
-
-    cargoLock.lockFile = ./Cargo.lock;
-    
-    postPatch = ''
-      cp ${./Cargo.lock} Cargo.lock
-    '';
+    cargoLock = ./Cargo.lock;
 
     nativeBuildInputs = [
       pkg-config
