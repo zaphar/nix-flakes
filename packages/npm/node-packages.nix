@@ -265,13 +265,13 @@ let
         sha512 = "IHijjFVPJTvzvrNPz+6nQy5lZQb7uh807RfTIEaQBrZXrIGjZy0L2dEb3hju34J0eqbXLCY6Hub/g81Jl4pGCA==";
       };
     };
-    "@types/node-25.0.10" = {
+    "@types/node-25.2.0" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "25.0.10";
+      version = "25.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-25.0.10.tgz";
-        sha512 = "zWW5KPngR/yvakJgGOmZ5vTBemDoSqF3AcV/LrO5u5wTWyEAVVh+IT39G4gtyAkh3CtTZs8aX/yRM82OfzHJRg==";
+        url = "https://registry.npmjs.org/@types/node/-/node-25.2.0.tgz";
+        sha512 = "DZ8VwRFUNzuqJ5khrvwMXHmvPe+zGayJhr2CDNiKB1WBE1ST8Djl00D0IC4vvNmHMdj6DlbYRIaFE7WHjlDl5w==";
       };
     };
     "@types/seedrandom-3.0.8" = {
@@ -409,13 +409,13 @@ let
         sha512 = "Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==";
       };
     };
-    "axios-1.13.2" = {
+    "axios-1.13.4" = {
       name = "axios";
       packageName = "axios";
-      version = "1.13.2";
+      version = "1.13.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/axios/-/axios-1.13.2.tgz";
-        sha512 = "VPk9ebNqPcy5lRGuSlKx752IlDatOjT9paPlm8A7yOuW2Fbvp4X3JznJtT4f0GzGLLiWE9W8onz51SqLYwzGaA==";
+        url = "https://registry.npmjs.org/axios/-/axios-1.13.4.tgz";
+        sha512 = "1wVkUaAO6WyaYtCkcYCOx12ZgpGf9Zif+qXa4n+oYzK558YryKqiL6UWwd5DqiH3VRW0GYhTZQ/vlgJrCoNQlg==";
       };
     };
     "bath-es5-3.0.3" = {
@@ -607,13 +607,13 @@ let
         sha512 = "D76uU73ulSXrD1UXF4KE2TMxVVwhsnCgfAyTg9k8P6KGZjlXKrOLe4dJQKI3Bxi5wjesZoFXJWElNWBjPZMbhg==";
       };
     };
-    "cors-2.8.5" = {
+    "cors-2.8.6" = {
       name = "cors";
       packageName = "cors";
-      version = "2.8.5";
+      version = "2.8.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/cors/-/cors-2.8.5.tgz";
-        sha512 = "KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==";
+        url = "https://registry.npmjs.org/cors/-/cors-2.8.6.tgz";
+        sha512 = "tJtZBBHA6vjIAaF6EnIaq6laBBP9aq/Y3ouVJjEfoHbRBcHBAHYcMh/w8LDrk2PvIMMq8gmopa5D4V8RmbrxGw==";
       };
     };
     "cross-spawn-7.0.6" = {
@@ -1048,13 +1048,13 @@ let
         sha512 = "0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==";
       };
     };
-    "hono-4.11.5" = {
+    "hono-4.11.7" = {
       name = "hono";
       packageName = "hono";
-      version = "4.11.5";
+      version = "4.11.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/hono/-/hono-4.11.5.tgz";
-        sha512 = "WemPi9/WfyMwZs+ZUXdiwcCh9Y+m7L+8vki9MzDw3jJ+W9Lc+12HGsd368Qc1vZi1xwW8BWMMsnK5efYKPdt4g==";
+        url = "https://registry.npmjs.org/hono/-/hono-4.11.7.tgz";
+        sha512 = "l7qMiNee7t82bH3SeyUCt9UF15EVmaBvsppY2zQtrbIhl/yzBTny+YUxsVjSjQ6gaqaeVtZmGocom8TzBlA4Yw==";
       };
     };
     "http-errors-2.0.1" = {
@@ -2083,13 +2083,13 @@ let
         sha512 = "muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==";
       };
     };
-    "zod-4.3.5" = {
+    "zod-4.3.6" = {
       name = "zod";
       packageName = "zod";
-      version = "4.3.5";
+      version = "4.3.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-4.3.5.tgz";
-        sha512 = "k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==";
+        url = "https://registry.npmjs.org/zod/-/zod-4.3.6.tgz";
+        sha512 = "rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==";
       };
     };
     "zod-to-json-schema-3.25.1" = {
@@ -2141,7 +2141,7 @@ in
       sources."@types/line-column-1.0.2"
       sources."@types/lodash-4.17.23"
       sources."@types/lodash.clonedeep-4.5.0"
-      sources."@types/node-25.0.10"
+      sources."@types/node-25.2.0"
       sources."@types/seedrandom-3.0.8"
       sources."adm-zip-0.5.16"
       sources."ansi-regex-5.0.1"
@@ -2257,7 +2257,7 @@ in
       sources."@types/line-column-1.0.2"
       sources."@types/lodash-4.17.23"
       sources."@types/lodash.clonedeep-4.5.0"
-      sources."@types/node-25.0.10"
+      sources."@types/node-25.2.0"
       sources."@types/seedrandom-3.0.8"
       sources."adm-zip-0.5.16"
       sources."ansi-regex-5.0.1"
@@ -2365,10 +2365,10 @@ in
   "@notionhq/notion-mcp-server" = nodeEnv.buildNodePackage {
     name = "_at_notionhq_slash_notion-mcp-server";
     packageName = "@notionhq/notion-mcp-server";
-    version = "2.0.0";
+    version = "2.1.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@notionhq/notion-mcp-server/-/notion-mcp-server-2.0.0.tgz";
-      sha512 = "SWwhcHeUl/RM8ryGiHbCLPqy43S3Tj3ZnVNBtdgKc8dhU9+jzKljsXox5+DbJV39YjpSGRcOkaeU4vsmuAEW0Q==";
+      url = "https://registry.npmjs.org/@notionhq/notion-mcp-server/-/notion-mcp-server-2.1.0.tgz";
+      sha512 = "A8UfQM+vZksoN0T8PqRXhXAfAoMnzlec01+hDe7CCDIkf1PDy9bw0QsbJsd4CVkJv2Eix4A9ZgNJV+3Jaq70BQ==";
     };
     dependencies = [
       sources."@cfworker/json-schema-4.1.1"
@@ -2376,7 +2376,7 @@ in
       (sources."@modelcontextprotocol/sdk-1.25.3" // {
         dependencies = [
           sources."express-5.2.1"
-          sources."zod-4.3.5"
+          sources."zod-4.3.6"
         ];
       })
       sources."accepts-2.0.0"
@@ -2389,7 +2389,7 @@ in
       sources."async-function-1.0.0"
       sources."async-generator-function-1.0.0"
       sources."asynckit-0.4.0"
-      sources."axios-1.13.2"
+      sources."axios-1.13.4"
       sources."bath-es5-3.0.3"
       sources."body-parser-2.2.2"
       sources."bytes-3.1.2"
@@ -2403,7 +2403,7 @@ in
       sources."content-type-1.0.5"
       sources."cookie-0.7.2"
       sources."cookie-signature-1.2.2"
-      sources."cors-2.8.5"
+      sources."cors-2.8.6"
       (sources."cross-spawn-7.0.6" // {
         dependencies = [
           sources."which-2.0.2"
@@ -2475,7 +2475,7 @@ in
       sources."has-symbols-1.1.0"
       sources."has-tostringtag-1.0.2"
       sources."hasown-2.0.2"
-      sources."hono-4.11.5"
+      sources."hono-4.11.7"
       sources."http-errors-2.0.1"
       sources."iconv-lite-0.7.2"
       sources."inherits-2.0.4"
@@ -2556,7 +2556,7 @@ in
       sources."zod-3.24.1"
       (sources."zod-to-json-schema-3.25.1" // {
         dependencies = [
-          sources."zod-4.3.5"
+          sources."zod-4.3.6"
         ];
       })
     ];
@@ -2573,10 +2573,10 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "2.1.15";
+    version = "2.1.29";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.15.tgz";
-      sha512 = "5bCGfN0w3dJrGqa08eRxxISK8SiL6O5DjSIeR2Aqkp88LXJFJnGIwoDJWk7I0IYyQE7J+rnjBGhL+TbMzv2MZA==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.29.tgz";
+      sha512 = "vMHTOXrYdnreGtKUsWdd3Bwx5fKprTyNG7shrvbx3L2/jU9jexkOJrEKmN5loeR5jrE54LSB38QpaIj8pVM6eQ==";
     };
     buildInputs = globalBuildInputs;
     meta = {

@@ -412,8 +412,7 @@
         "rust-overlay": "rust-overlay_2",
         "tree-sitter-cli-src": "tree-sitter-cli-src",
         "treesitter-context": "treesitter-context",
-        "wasm-bindgen-flake-0-2-105": "wasm-bindgen-flake-0-2-105",
-        "zig-src": "zig-src"
+        "wasm-bindgen-flake-0-2-105": "wasm-bindgen-flake-0-2-105"
       }
     },
     "roslyn-lsp": {
@@ -567,23 +566,6 @@
         "owner": "wasm-bindgen",
         "ref": "0.2.105",
         "repo": "wasm-bindgen",
-        "type": "github"
-      }
-    },
-    "zig-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1755645653,
-        "narHash": "sha256-RFbJYeTHj/aNjWSsG+HHtmOL1VY4dpvJjbx04OhF4bI=",
-        "owner": "ziglang",
-        "repo": "zig",
-        "rev": "3db960767d12b6214bcf43f1966a037c7a586a12",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ziglang",
-        "ref": "0.15.1",
-        "repo": "zig",
         "type": "github"
       }
     }

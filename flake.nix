@@ -37,10 +37,10 @@
       url = "github:greggh/claude-code.nvim";
       flake = false;
     };
-    zig-src = {
-      url = "github:ziglang/zig/0.15.1";
-      flake = false;
-    };
+    #zig-src = {
+    #  url = "github:ziglang/zig/0.15.1";
+    #  flake = false;
+    #};
     tree-sitter-cli-src = {
       url = "github:tree-sitter/tree-sitter";
       flake = false;
@@ -96,7 +96,6 @@
     roslyn-lsp,
     ionide-nvim-src,
     claude-code-nvim-src,
-    zig-src,
     tree-sitter-cli-src,
     rust-overlay,
     naersk,
@@ -250,10 +249,6 @@
         name = "claude-code-vim";
         src = claude-code-nvim-src;
     };
-    ziglang = pkgs.callPackage ./packages/ziglang/default.nix {
-      src = zig-src;
-      version = "0.13.0";
-    };
     tree-sitter-cli = naersk-lib.buildPackage {
       src = tree-sitter-cli-src;
       root = tree-sitter-cli-src;
@@ -290,7 +285,6 @@
           nvim-treesitter-context
           roslyn-nvim
           ionide-nvim
-          ziglang
           tree-sitter-cli
           createTreeSitterTypings
           mcp-hub
