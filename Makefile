@@ -12,17 +12,8 @@ update-input-%:
 build-%:
 	nix build ".#$*"
 
-update-npm-quint:
-	cd packages/npm/quint; node2nix -18 -i node-packages.json
-
-update-npm-mcp-hub:
-	cd packages/npm/mcp-hub; node2nix -18 -i node-packages.json
-
-update-npm-notion-mcp-server:
-	cd packages/npm/notion-mcp-server; node2nix -18 -i node-packages.json
-
-update-npm-claude-code:
-	cd packages/npm/claude-code; node2nix -18 -i node-packages.json
+update-npm-%:
+	cd packages/npm/$*; node2nix -18 -i node-packages.json
 
 update-npm: update-npm-quint update-npm-mcp-hub update-npm-notion-mcp-server update-npm-claude-code
 
