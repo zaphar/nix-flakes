@@ -12,14 +12,19 @@ update-input-%:
 build-%:
 	nix build ".#$*"
 
-update-npm:
-	#curl -L https://raw.githubusercontent.com/informalsystems/quint/$*/quint/package.json > nix/packages/quint/package.json 
-	#curl -L https://raw.githubusercontent.com/informalsystems/quint/$*/quint/package-lock.json > nix/packages/quint/package-lock.json
-	cd packages/npm; node2nix -18 -i node-packages.json
-	#pactch the default.nix
-	#sed -e 's#inherit nodeEnv;#inherit nodeEnv quint-src;#' -e 's/, system/, quint-src, system/' -i '' nix/packages/quint/default.nix
-	#sed -e 's#src = \./\.#src = "$${quint-src}/quint"#' -e 's#nodeEnv, #quint-src, nodeEnv, #' -i '' nix/packages/quint/node-packages.nix
-	#rm -f nix/packages/quint/package*.json
+update-npm-quint:
+	cd packages/npm/quint; node2nix -18 -i node-packages.json
+
+update-npm-mcp-hub:
+	cd packages/npm/mcp-hub; node2nix -18 -i node-packages.json
+
+update-npm-notion-mcp-server:
+	cd packages/npm/notion-mcp-server; node2nix -18 -i node-packages.json
+
+update-npm-claude-code:
+	cd packages/npm/claude-code; node2nix -18 -i node-packages.json
+
+update-npm: update-npm-quint update-npm-mcp-hub update-npm-notion-mcp-server update-npm-claude-code
 
 generate-lua-json5-lockfile:
 	rm -rf /tmp/lua-json5-clone

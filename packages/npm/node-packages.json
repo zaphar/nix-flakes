@@ -1,7 +1,0 @@
-[
-	"@informalsystems/quint",
-	"@informalsystems/quint-language-server",
-  "mcp-hub",
-  "@notionhq/notion-mcp-server",
-	"@anthropic-ai/claude-code"
-]

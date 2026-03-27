@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(nix build:*)"
+      "Bash(nix build:*)",
+      "Bash(node2nix -18 -i node-packages.json)",
+      "Bash(jj status:*)"
     ],
     "deny": []
   }

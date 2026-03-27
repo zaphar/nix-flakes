@@ -204,11 +204,11 @@
     nurl = nurl-flake.packages."${system}".default;
     nil = nil-flake.packages."${system}".default;
     gomod2nix = gomod2nix-src.packages."${system}".default;
-    quint = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint";
-    quint-lsp = (pkgs.callPackage ./packages/npm/default.nix {})."@informalsystems/quint-language-server";
-    mcp-hub = (pkgs.callPackage ./packages/npm/default.nix {})."mcp-hub";
-    claude-code = (pkgs.callPackage ./packages/npm/default.nix {})."@anthropic-ai/claude-code";
-    notion-mcp-server = (pkgs.callPackage ./packages/npm/default.nix {})."@notionhq/notion-mcp-server";
+    quint = (pkgs.callPackage ./packages/npm/quint/default.nix {})."@informalsystems/quint";
+    quint-lsp = (pkgs.callPackage ./packages/npm/quint/default.nix {})."@informalsystems/quint-language-server";
+    mcp-hub = (pkgs.callPackage ./packages/npm/mcp-hub/default.nix {})."mcp-hub";
+    claude-code = (pkgs.callPackage ./packages/npm/claude-code/default.nix {})."@anthropic-ai/claude-code";
+    notion-mcp-server = (pkgs.callPackage ./packages/npm/notion-mcp-server/default.nix {})."@notionhq/notion-mcp-server";
     victoria-logs = pkgs.victoriametrics;
     victoria-metrics = pkgs.victoriametrics;
     neogit-nvim = pkgs.vimUtils.buildVimPlugin {
